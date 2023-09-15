@@ -1,0 +1,98 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    --soft-blue:#5FFBF1;
+    }
+
+.container h1{
+    font-family: 'cairo',sans-serif;
+    letter-spacing: 1.5px;
+    margin-bottom: 3%;
+    text-align: left;
+    border-bottom:2px solid black;
+}
+.container h1::first-letter{
+    text-transform: uppercase;
+    color: var(--Orange);
+    font-size: 45px;
+}
+
+.container .products{
+    width:100%;
+}
+
+
+.container{
+    height: fit-content;
+}
+
+/* product style */
+
+.shoes{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 20px;
+    justify-content: center;
+}   
+.shoes::before{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    border-radius: 100%;
+    top: 50%;;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--gray);
+    z-index: -1;
+}
+.shoes img{
+    max-width:100%;
+    align-self: center;
+    margin-top: -45%;
+    filter: drop-shadow(0px 11px 10px var(--dark));
+}
+
+.shoes .price{
+    align-self: flex-end;
+    justify-self: flex-end;
+    position: relative;
+    font-family: cairo,sans-serif;
+    font-weight: 700;
+    width: fit-content;
+    font-size:3vw;
+    margin-top:  -20%;
+
+    color: var(--Orange);
+}
+.shoes h3{
+    font-family: cairo,sans-serif;
+    font-size: 2.2vw;
+    font-weight: 700;
+    direction: ltr;
+    text-align: left;
+    width: 80%;
+    word-wrap: break-word;
+}
+.container .products{
+    display: flex;
+    align-items: center;
+ 
+    /* margin: 10px 10px 0 10px ; */
+}
+.container .products .shoes img{
+    transition: all 300ms ease-in-out;
+}
+.container .products .shoes img:hover {
+    transform: scale(1.2) translateY(-30px);
+    filter: none;
+}

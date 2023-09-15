@@ -1,0 +1,104 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    --darkGray:grey;
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    --soft-blue:#5FFBF1;
+}
+
+*{
+    box-sizing: border-box;
+    transition: all 700ms ease-in-out;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer section{
+    flex-grow: 1;
+}
+.footer section:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+.footer section:nth-child(1) a{
+    text-decoration: none;
+    color:var(--black);
+    cursor: pointer;
+}
+.footer section:nth-child(1)>a{
+    font-size: 3.5vw;
+    justify-self: flex-start;
+}
+.footer section:nth-child(1) .contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+}
+.footer section:nth-child(1) .contact a{
+    font-size: 1.5vw;
+    
+}
+
+.footer section:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+.footer section:nth-child(2) ul{
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer section:nth-child(2) ul li{
+    font-family: 'cairo';
+    font-size: 1.5vw;
+}
+.footer section:nth-child(2) ul li a{
+    text-decoration: none;
+    color:var(--darkGray);
+}
+.footer section:nth-child(2) ul li:nth-child(1) a{
+    color: var(--black);
+    font-weight: 700;
+}
+
+
+.footer section:nth-child(3){
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   width:100%;
+   grid-column: span 3;
+   padding: 1.5%;
+   width: 100%;
+   border-top: 1px solid var(--darkGray);
+}
+.footer section:nth-child(3) img{
+    width: 1.5vw;
+}
+
+@media (max-width:688px) {
+    .footer section:nth-child(1){
+        width: 100%;
+    }
+    .footer section:nth-child(2){
+        width: 80%;
+    }
+}

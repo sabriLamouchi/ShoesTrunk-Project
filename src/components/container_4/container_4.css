@@ -1,0 +1,107 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    --soft-blue:#5FFBF1;
+    }
+
+*{
+    box-sizing: border-box;
+    transition: all 700ms ease-in-out;
+}
+
+
+.container_4{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15% 0;
+    height: 40vw;
+    width:100%
+}
+.container_4 .section{
+    width: 80%;
+    background-image: url("./shoestrunk1.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    border-radius: 50px;
+    position: relative;
+    background-color: red;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0px 29px 68px -16px var(--dark);
+}
+.container_4 .section img{
+    position: absolute;
+    width: 40vw;
+    left: 0;
+}
+.container_4 .section p{
+    position: absolute;
+    color: var(--gray);
+    top: 0%;
+    right: 0;
+    text-align: left;
+    font-size: 5vw;
+    font-family: "cairo";
+    line-height: 1.5;
+    font-weight: 700;
+    width: 50%;
+    transition: all 700ms 300ms ease-in-out;
+    z-index: 2;
+}
+
+.container_4 .section p a:nth-child(1){
+    color: var(--violet);
+}
+.container_4 .section p a:nth-child(2){
+    color: var(--soft-blue);
+}
+/* @media (max-width:688px){
+    .container_4 .section {
+        height: 40vw;
+    }
+
+} */
+
+.container_4 .section .button{
+    width:25vw;
+    height: 25vw;
+    background-color:whitesmoke;
+    border-radius: 100%;
+    position: absolute;
+    margin-right: 2%;
+    transition: all 0.5s ease-in-out;
+    animation: buttons 1.5s alternate ease-in;
+    right: -10%;
+    bottom: -10%;
+    z-index: 1;
+    cursor: pointer;
+}
+.container_4 .section .button::before,
+.container_4 .section .button::after{
+    content: "";
+    width: 25%;
+    height: 25%;
+    background-color: var(--Orange);
+    position: absolute;
+    border-radius: 0 100px;
+    top:50%;
+    left: 50%;
+}
+.container_4 .section .button::before{
+    transform: translate(-50%,-50%);
+}
+.container_4 .section .button::after{
+    transform: translate(-50%,-50%)  rotateZ(90deg);
+}
+.container_4 .section .button:hover{
+    transform: scale(5);
+    background: transparent;
+}

@@ -1,0 +1,201 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    }
+
+*{
+    box-sizing: border-box;
+    transition: all 700ms ease-in-out;
+}
+.container_3{
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10% 5%;
+}
+.container_3 .section_1{
+    width: 30%;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+
+.container_3 .section_1 h1{
+    font-family: "Cairo",sans-serif;
+    line-height: 1.5;
+    font-size: 4.5vw;
+    text-align: left;
+    word-wrap: break-word;
+    margin: 5% 0 ;
+    position: relative;
+    width: 87%;
+}
+.container_3 .section_1 h1::before{
+    content: attr(percentage);
+    position: absolute;
+    font-size: 250%;
+    color: var(--yallow);
+    font-family: 'Cairo';
+    top:60%;
+    right: -70%;
+    transform: translate(-50%,-50%);
+}
+.container_3 .section_1 h1::after{
+    content: attr(tirre);
+    position: absolute;
+    font-family: sans-serif;
+    height: fit-content;
+    color: var(--yallow);
+    font-size: 200%;
+    top:25%;
+    right: 10%;
+    transform: translate(-50%,-50%);
+}
+
+.container_3 .section_1 p{
+    text-align: left;
+    font-size: 1.5vw;
+    font-family: 'montserrat';
+}
+
+
+.container_3 .section_2{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+}
+.container_3 .section_2{
+    width: 50%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    flex-grow: 1;
+    filter: drop-shadow( 0px 15px 15px var(--dark));
+    
+}
+/* flex class */
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_3 .section_2 img{
+    width:100%;
+
+}
+
+/* Buttons style */
+
+.container_3 .section_1 .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5% 0;
+    width: 100%;
+}
+.container_3 .section_1 .buttons div{
+    width: 100%;
+    gap: 4%;
+    cursor: pointer;
+}
+
+.container_3 .section_1 .buttons div button{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+    background-color: var(--gray);
+    position: relative;
+    cursor: pointer;
+}
+.container_3 .section_1 .buttons div button::before,
+.container_3 .section_1 .buttons div button::after{
+    content: "";
+    width: 25%;
+    height: 25%;
+    background-color: var(--Orange);
+    position: absolute;
+    border-radius: 0 100px;
+    top:50%;
+    left: 50%;
+}
+.container_3 .section_1 .buttons div button::before{
+    transform: translate(-50%,-50%);
+}
+.container_3 .section_1 .buttons div button::after{
+    transform: translate(-50%,-50%) rotateZ(90deg);
+}
+
+.container_3 .section_1 div  button:hover{
+    background-color: var(--Orange);
+}
+.container_3 .section_1 div button:hover::before,
+.container_3 .section_1 div  button:hover::after{
+    background-color: whitesmoke;
+}
+
+
+.container_3 .section_1 .buttons div p{
+    font-size: 1.25vw;
+    font-weight: 700;
+    position: relative;
+}
+.container_3 .section_1 .buttons div p::after{
+    content: attr(placeholder);
+    position: absolute;
+    width: 120%;
+    font-size: 70%;
+    font-weight: 300;
+    bottom: -70%;
+    left: 0;
+}
+
+
+/* Mobile screen */
+@media (max-width:688px){
+    .container_3{
+        flex-direction: column-reverse;
+
+    }
+    .container_3 .section_1{
+        width: 100%;
+    }
+    .container_3 .section_1 h1{
+
+        font-size: 8.0vw;
+    }
+    .container_3 .section_1 h1::before{
+        top: 80%;
+        right: -38%;
+        font-size: 220%;
+    }
+    .container_3 .section_1 p{
+        font-size: 3.5vw;
+        margin-bottom: 10%;
+    }
+    .container_3 .section_2{
+        width: 100%;
+    }
+    .container_3 .section_2 img{
+        width: 100%;
+    }
+    .container_3 .section_1 .buttons  div button{
+        width: 8vw;
+        height: 8vw;
+    }
+    .container_3 .section_1 .buttons  div p{
+        font-size: 2.5vw;
+    }
+
+}

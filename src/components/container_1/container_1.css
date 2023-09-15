@@ -1,0 +1,125 @@
+
+
+:root{
+--Orange: rgb(244, 111, 15);
+--violet: rgb(94, 79, 230);
+
+--gray: rgb(246, 246, 246);
+
+--yallow: rgb(255, 198, 60);
+--black:black;
+--dark:#27374D
+}
+
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container img{
+    position: relative;
+}
+.container>img:nth-child(1){
+    width: 100%;
+    margin-top: 0;
+    animation: Express 0.5s alternate ease-in-out;
+  
+    
+}
+.container >img:nth-child(2){
+    animation: Express 1s  ease-in-out;
+
+}
+
+@keyframes Express {
+    From{
+        left:-200%;
+    }
+    to{
+        left:0;
+        opacity: 100%;
+    }
+}
+
+
+.container .exclusive{
+    width: 100%;
+    background-image: url('./back_shoes.svg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: auto;
+    display :flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    filter: drop-shadow(0px 10px 10px var(--dark));
+
+}
+.container .exclusive img{
+    transition: all 0.5s ease-in-out;
+    width:80%;
+    z-index: 3;
+    animation: Express 1.5s  ease-in-out;
+    flex-grow: 1;
+
+}
+.container .exclusive img:hover{
+    transform: rotateZ(-15deg)
+}
+
+.container .exclusive .button{
+    width:200px;
+    aspect-ratio: 1;
+    background-color:whitesmoke;
+    border-radius: 100%;
+    position: relative;
+    margin-right: 2%;
+    transition: all 0.5s ease-in-out;
+    animation: buttons 1.5s alternate ease-in;
+    cursor: pointer;
+    
+}
+
+.container .exclusive .button::before,.container .exclusive .button::after{
+    content: "";
+    width: 25%;
+    height: 25%;
+    background-color: var(--Orange);
+    position: absolute;
+    border-radius: 0 100px;
+    top:50%;
+    left: 50%;
+}
+.container .exclusive .button::before{
+    transform: translate(-50%,-50%);
+}
+.container .exclusive .button::after{
+    transform: translate(-50%,-50%)  rotateZ(90deg);
+    
+}
+.container .exclusive .button:hover{
+    background-color: var(--Orange);
+}
+.container .exclusive .button:hover::before,.container .exclusive .button:hover::after{
+
+    background-color: whitesmoke;
+}
+
+@keyframes buttons{
+    0%{
+        opacity: 0%;
+    }
+    50% {
+        opacity: 50%;
+    }
+    75%{
+        opacity: 75%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,271 @@
+
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    }
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:80px;
+    border-bottom: 1px solid black;
+    font-family: "Cairo",sans-serif;
+    flex-wrap:nowrap;
+    top: 0;
+    position: sticky;
+    z-index: 999;
+}
+* {
+    margin:0
+}
+header .list-items{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    font-size: 15px;
+    flex-wrap: nowrap;
+}
+header .list-items li a{
+    text-decoration: none;
+    color :black;
+}
+header>a{
+    font-size: 30px;
+    text-decoration:none;
+    color:black;
+    position: relative;
+    animation:logo-entering 1s alternate ease-in-out ;
+}
+header .interract-items{
+    list-style: none;
+    display: flex;
+    gap:15px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    width: auto;
+}
+header .interract-items li img{
+    width:30px;
+    height:30px;
+    transition: all .25s ease-in-out;
+    margin-right: 10px;
+    background-color:var(--gray);
+    border: 2px solid var(--gray) ;
+    border-radius: 50%;
+}
+header .interract-items li img:hover{
+    transform: scale(1.5);
+}
+header  .toggle{
+    width: 35px;
+    height: 20px;
+    transition: all .5s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform-origin: left;
+    display: none;
+    padding: 0;
+    position: relative;
+}
+header  .toggle::after{
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+header  .toggle:hover::after{
+    width: 50%;
+}
+
+header .bar{
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    position: relative;
+    cursor:pointer;
+    transition: all .5s ease-in-out;
+    transform-origin: center;
+    border-radius: 20px;
+    
+}
+header .bar ,header .toggle:hover:after{
+    transition: all 300ms ease-in-out ;
+}
+header .toggle:hover .bar{
+    width:80%;
+}
+
+header div.active::after{
+    width: 0;
+}
+header div.active .bar{
+    background-color: red;
+    width: 80%;
+}
+header div.active .bar:nth-child(1){
+    
+    transform: rotate(30deg) translateY(12px) translateX(4px);
+}
+header div.active .bar:nth-child(2){
+    
+    transform: rotate(-30deg) translateY(-3px);
+}
+header.active{
+    background-color: var(--gray);
+    transition: width 300ms ease-in-out;
+}
+
+/* header .toggle .bar::after,header .toggle .bar::before{
+    content: "";
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    border-radius: 20px;
+} */
+
+/* .bar::before{
+    bottom:10px;
+    width:50%;
+    
+}
+.bar::after{
+    top:10px;
+    width:150%
+} */
+
+@keyframes logo-entering {
+    0%{
+        top:-100%;
+    }
+    20%{
+        top:50%;
+    }
+    40%{
+        top:-50%;
+    }
+    60%{
+        top:25%;
+    }
+    80%{
+        top:-25%;
+    }
+    100%{
+        top:0%;
+    }
+}
+
+/* Mobile style*/
+@media (max-width:688px){
+    header .list-items{
+        flex-direction: column;
+        order: 2;
+        justify-content: center;
+        align-content: center;
+        align-self: flex-end;
+        position: relative;
+        background-color: black;
+        height: 20rem;
+        border-radius:  10px 0 0 10px;
+        transition: all 0.5s ease-in-out;
+        position: absolute;
+        top:100%;
+        right: 0%;
+        width: 80%;
+        animation: side-bar 0.5s alternate ease-in-out both ;
+        z-index: 1000;
+    }
+    header  .active{
+    display: none;
+    }
+    header .list-items li a{
+        color: whitesmoke;
+    }
+    header .list-items li{
+        position: relative;
+    }
+    header .list-items li ::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        background-color: whitesmoke;
+        left:0;
+        transition: all 0.5s ease-in-out;
+    }
+    header {
+        align-content: center;
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        top: 0;
+        position: sticky;
+        z-index: 999;
+    }
+    header .toggle{
+        justify-self: flex-end;
+        position:relative;
+        flex-wrap: nowrap;
+        display: flex;
+        right: 2%;
+    }
+    header  .toggle .bar{
+       justify-self: flex-end;
+    }
+
+    header .interract-items{
+        justify-self: center;    
+        align-items: center;
+    }
+    @keyframes side-bar {
+        0%{
+            right: -100%;
+        }
+        50%{
+        }
+        100%{
+            right:0%
+        }
+    }
+    header div.toggle.active::after{
+        width: 0;
+    }
+    header .interract-items{
+        margin:0;
+        margin-left: -10%;
+    }
+}
+
+
+@media (max-width:375px){
+    header{
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    header>a{
+        font-size: 25px;
+    }
+    header .interract-items li img{
+        aspect-ratio: 1;
+        width: 25px;
+        
+    }
+}
