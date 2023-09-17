@@ -93,6 +93,6 @@
     transition: all 300ms ease-in-out;
 }
 .container .products .shoes img:hover {
-    transform: scale(1.2) translateY(-30px);
+    transform: scale(1.5) translateY(-30px);
     filter: none;
 }
