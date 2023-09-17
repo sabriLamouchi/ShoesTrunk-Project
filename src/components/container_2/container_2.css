@@ -105,7 +105,7 @@
     }
     
 }
-@media (max-width:375px) {
+@media (max-width:370px) {
     .container .products .shoes img:hover {
         transform: scale(1.4) translateY(-5px);
         filter: none;
