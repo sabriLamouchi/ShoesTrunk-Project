@@ -96,3 +96,19 @@
     transform: scale(1.4) translateY(-45px);
     filter: none;
 }
+
+
+@media (max-width:688px){
+    .container .products .shoes img:hover {
+        transform: scale(1.4) translateY(-15px);
+        filter: none;
+    }
+    
+}
+@media (max-width:375px) {
+    .container .products .shoes img:hover {
+        transform: scale(1.4) translateY(-5px);
+        filter: none;
+    }
+    
+}
