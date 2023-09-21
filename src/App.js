@@ -8,7 +8,8 @@ import Container_5 from './components/container_5/Container_5.js'
 import Container_6 from './components/container_6/Container_6.js'
 import Footer from './components/Footer/Footer.js'
 import {motion,useAnimation,useInView} from "framer-motion"
-import React,{useRef,useEffect} from 'react';
+import React,{useRef,useEffect, useState} from 'react';
+import HashLoader from "react-spinners/HashLoader";
 function App() {
   const ref=useRef(null)
   const inview=useInView(ref, {once:true});
@@ -18,29 +19,57 @@ function App() {
       mainAnimation.start('visible')
     }
   },[inview])
+  
+  // loaing page animation:
+  const [loading,sertloading]=useState(false);
+
+  useEffect(()=>{
+    sertloading(true)
+    setTimeout(()=>{
+      sertloading(false)
+    },8000);
+  },[])
+
+
   return (
     <div className="App">
-      <Header/>
-      <Container_1/>
-      <Container_2/>
-      <motion.div
-        ref={ref}
-                variants={{
-                  hidden:{opacity:0 , y:100},
-                  visible:{ opacity:1 , y:0 }
-              }}
-              initial="hodden"
-              animate={mainAnimation}
-              transition={{
-                  duration:0.5, delay:0.25
-              }}
-      >
-        <Container_3/>
-      </motion.div>
-      <Container_4/>
-      <Container_5/>
-      <Container_6/>
-      <Footer/>
+       {
+        loading ?
+        <HashLoader
+        color={"rgb(244, 111, 15)"}
+        loading={loading}
+        X={100}
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+         :
+         <>
+         
+         <Header/>
+         <Container_1/>
+         <Container_2/>
+         <motion.div
+           ref={ref}
+                   variants={{
+                     hidden:{opacity:0 , y:100},
+                     visible:{ opacity:1 , y:0 }
+                 }}
+                 initial="hodden"
+                 animate={mainAnimation}
+                 transition={{
+                     duration:0.5, delay:0.25
+                 }}
+         >
+           <Container_3/>
+         </motion.div>
+         <Container_4/>
+         <Container_5/>
+         <Container_6/>
+         <Footer/>
+         </>
+       }
+
     </div>
   );
 }

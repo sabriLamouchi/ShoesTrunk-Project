@@ -53,3 +53,10 @@
     transform: rotate(360deg);
   }
 }
+
+.App:has([data-testid="loader"]) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transition: all 200ms ease-in-out;
+}
