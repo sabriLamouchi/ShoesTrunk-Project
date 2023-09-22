@@ -56,16 +56,16 @@
 
 .App:has([data-testid="loader"]) {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 40%;
+  top: 40%;
   transition: all 200ms ease-in-out;
 }
 
 @media (max-width:688px){
   .App:has([data-testid="loader"]) {
     position: absolute;
-    left: 40%;
-    top: 40%;
+    left: 30%;
+    top: 30%;
     transition: all 200ms ease-in-out;
   }
 }
