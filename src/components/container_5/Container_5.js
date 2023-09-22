@@ -79,7 +79,7 @@ export default function Container_5(){
             price:'250$'
         },
         {
-            id:8,
+            id:9,
             img:kid3,
             name:'one_big_kids_basketball',
             price:'250$'

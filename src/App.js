@@ -38,7 +38,6 @@ function App() {
         <RingLoader
         color={"rgb(244, 111, 15)"}
         loading={loading}
-        X={100}
         size={100}
         aria-label="Loading Spinner"
         data-testid="loader"

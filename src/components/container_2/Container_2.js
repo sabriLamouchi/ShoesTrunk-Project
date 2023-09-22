@@ -113,8 +113,8 @@ export default function container_2(){
                     }}
                     spaceBetween={40}
                     slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
                 >
                     {shoes}
                 </Swiper>
