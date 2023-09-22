@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shoesTrunk-Project/static/css/main.a1393723.css",
+    "main.css": "/shoesTrunk-Project/static/css/main.5a3fec14.css",
     "main.js": "/shoesTrunk-Project/static/js/main.9136cba3.js",
     "static/media/cameraMenSplash.svg": "/shoesTrunk-Project/static/media/cameraMenSplash.c7d29de77dda26361a75ec05e113dc2b.svg",
     "static/media/shoestrunk1.png": "/shoesTrunk-Project/static/media/shoestrunk1.ef7f33a28d5f5a34a83d.png",
@@ -31,11 +31,11 @@
     "index.html": "/shoesTrunk-Project/index.html",
     "static/media/heart.svg": "/shoesTrunk-Project/static/media/heart.c7add577cc256c6dc314f8ca044cab8b.svg",
     "static/media/search.svg": "/shoesTrunk-Project/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
-    "main.a1393723.css.map": "/shoesTrunk-Project/static/css/main.a1393723.css.map",
+    "main.5a3fec14.css.map": "/shoesTrunk-Project/static/css/main.5a3fec14.css.map",
     "main.9136cba3.js.map": "/shoesTrunk-Project/static/js/main.9136cba3.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1393723.css",
+    "static/css/main.5a3fec14.css",
     "static/js/main.9136cba3.js"
   ]
 }
