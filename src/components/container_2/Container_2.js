@@ -84,7 +84,7 @@ export default function container_2(){
         return (
             <SwiperSlide>     
                   <Product 
-                    key={prod.key}
+                    key={prod.id}
                     img={prod.img}
                     name={prod.name}
                     price={prod.price}
