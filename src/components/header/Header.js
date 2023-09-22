@@ -11,10 +11,10 @@ import heart from './heart.svg'
       const handleScroll=()=>{
         if(window.scrollY!=0){
         //   console.log(elementRef.current.getBoundingClientRect());
-        document.querySelector("header").classList.add("active")
+        elementRef.current.classList.add("active")
         }
         else{
-        document.querySelector("header").classList.remove("active")
+        elementRef.current.classList.remove("active")
         }
       }
       // Add the scroll event listener
