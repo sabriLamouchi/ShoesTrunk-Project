@@ -155,8 +155,18 @@
 }
 .scrollUp:hover{
     background-color: var(--Orange);
+    border:2px solid var(--yallow)
 }
 
 .scrollUp.active{
     display: block;
+}
+
+@media(max-width:688px){
+    .scrollUp::before{
+        width: 100%;
+    }
+    .scrollUp:hover{
+        background-color: none;
+    }
 }
