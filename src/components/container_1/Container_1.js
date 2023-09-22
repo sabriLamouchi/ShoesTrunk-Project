@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import './container_1.css'
 import  Express from'./Express.svg'
 import Through from './Through.svg'
@@ -7,7 +7,35 @@ import shoes from './shoes.svg'
 import {motion} from "framer-motion"
 export default function Container_1(){
 
+    const elementRef=useRef();
+    
+    useEffect(()=>{
+        const handleScroll=()=>{
+            if(window.scrollY>700)
+                document.querySelector(".scrollUp").classList.add("active")
+            else
+                document.querySelector(".scrollUp").classList.remove("active")
 
+                document.querySelector(".scrollUp").onClick=()=>{
+                    console.log("here");
+                }
+        }
+        window.addEventListener("scroll",handleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
+    },[])
+
+
+
+    const scrollTop=()=>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+        
+    
+    
     return(
         <motion.div
         variants={{
@@ -28,7 +56,7 @@ export default function Container_1(){
                 <div className="button">
                 </div>
             </div>
-            
+            <div ref={elementRef} onClick={scrollTop} className="scrollUp"> </div>
         </motion.div>
     );
 }

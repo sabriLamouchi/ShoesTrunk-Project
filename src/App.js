@@ -6,10 +6,11 @@ import Container_3 from './components/container_3/Container_3.js'
 import Container_4 from './components/container_4/Container_4.js'
 import Container_5 from './components/container_5/Container_5.js'
 import Container_6 from './components/container_6/Container_6.js'
+import ScrollUp from './components/scrollUp/ScrollUp';
 import Footer from './components/Footer/Footer.js'
 import {motion,useAnimation,useInView} from "framer-motion"
 import React,{useRef,useEffect, useState} from 'react';
-import HashLoader from "react-spinners/HashLoader";
+import RingLoader from "react-spinners/RingLoader";
 function App() {
   const ref=useRef(null)
   const inview=useInView(ref, {once:true});
@@ -35,7 +36,7 @@ function App() {
     <div className="App">
        {
         loading ?
-        <HashLoader
+        <RingLoader
         color={"rgb(244, 111, 15)"}
         loading={loading}
         X={100}

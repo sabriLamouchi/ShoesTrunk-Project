@@ -60,3 +60,12 @@
   top: 50%;
   transition: all 200ms ease-in-out;
 }
+
+@media (max-width:688px){
+  .App:has([data-testid="loader"]) {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transition: all 200ms ease-in-out;
+  }
+}

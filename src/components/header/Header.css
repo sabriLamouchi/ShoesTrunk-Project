@@ -18,8 +18,8 @@ header{
     font-family: "Cairo",sans-serif;
     flex-wrap:nowrap;
     top: 0;
-    position: sticky;
-    z-index: 999;
+    
+    z-index: 998;
 }
 * {
     margin:0
@@ -130,6 +130,7 @@ header div.active .bar:nth-child(2){
 header.active{
     background-color: var(--gray);
     transition: width 300ms ease-in-out;
+    position:sticky
 }
 
 /* header .toggle .bar::after,header .toggle .bar::before{
