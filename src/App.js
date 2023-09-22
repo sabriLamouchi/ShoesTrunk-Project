@@ -6,7 +6,6 @@ import Container_3 from './components/container_3/Container_3.js'
 import Container_4 from './components/container_4/Container_4.js'
 import Container_5 from './components/container_5/Container_5.js'
 import Container_6 from './components/container_6/Container_6.js'
-import ScrollUp from './components/scrollUp/ScrollUp';
 import Footer from './components/Footer/Footer.js'
 import {motion,useAnimation,useInView} from "framer-motion"
 import React,{useRef,useEffect, useState} from 'react';
