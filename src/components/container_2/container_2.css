@@ -60,6 +60,7 @@
     align-self: center;
     margin-top: -45%;
     filter: drop-shadow(0px 11px 10px var(--dark));
+    z-index:100 ;
 }
 
 .shoes .price{
@@ -95,6 +96,7 @@
 .container .products .shoes img:hover {
     transform: scale(1.4) translateY(-45px);
     filter: none;
+   
 }
 
 
