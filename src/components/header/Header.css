@@ -36,6 +36,16 @@ header .list-items{
 header .list-items li a{
     text-decoration: none;
     color :black;
+    transition: color 50ms linear;
+}
+header .list-items li{
+    transition: scale 100ms ease-in-out;
+}
+header .list-items li:hover{
+    transform: scale(1.3);
+}
+header .list-items li:hover a{
+    color: var(--Orange);
 }
 header>a{
     font-size: 30px;
