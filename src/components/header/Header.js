@@ -3,6 +3,7 @@ import './Header.css'
 import search from './search.svg'
 import cart from './cart.svg'
 import heart from './heart.svg'
+import { NavLink, Outlet } from "react-router-dom";
 
  export default function Header(props){
     
@@ -26,6 +27,7 @@ import heart from './heart.svg'
        };
     },[])
     return (
+        <>
         <header ref={elementRef}>
             <a href="">ShoesTrunk.</a>
             <ul className="list-items active">
@@ -36,9 +38,9 @@ import heart from './heart.svg'
                 <li><a href="">Sales</a></li>
             </ul>
             <ul className="interract-items">
-                <li><a href=""><img src={search} alt=""/></a></li>
-                <li><a href=""><img src={heart} alt=""/></a></li>
-                <li><a href=""><img src={cart} alt=""/></a></li>      
+                <li><a href=""><img src={search} alt="search"/></a></li>
+                <li><NavLink to={"Likes_page"} href=""><img src={heart} alt="Likes"/></NavLink></li>
+                <li><a to={"Carte"} href=""><img src={cart} alt="carte"/></a></li>      
             </ul>
             <div className="toggle" onClick={()=>{
                 // console.log(document.querySelector('.list-items'));
@@ -57,6 +59,8 @@ import heart from './heart.svg'
             </div>
             
         </header>
+         <Outlet/>
+         </>
     );
 
 

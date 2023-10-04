@@ -17,9 +17,8 @@ export default function container_2(){
 
    const shoes= products.map((prod)=>{
         return (
-            <SwiperSlide style={{overflow:"visible"}}>     
+            <SwiperSlide style={{overflow:"visible"}} key={prod.id}>     
                   <Product 
-                    key={prod.id}
                     img={prod.img}
                     name={prod.name}
                     price={prod.price}
