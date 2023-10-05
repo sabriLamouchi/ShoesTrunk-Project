@@ -118,5 +118,8 @@ header + div.notFound section >a:hover{
   text-shadow: none;
   box-shadow: -2px 10px var(--Orange);
 }
-header + div.notFound  >div{
+@media (max-width:688px) {
+  header + div.notFound div{
+    width: 100% !important;
+  }
 }
