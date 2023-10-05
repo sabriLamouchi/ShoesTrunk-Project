@@ -29,7 +29,7 @@ import { NavLink, Outlet } from "react-router-dom";
     return (
         <>
         <header ref={elementRef}>
-            <a href="">ShoesTrunk.</a>
+            <NavLink to={'/shoesTrunk-Project'}>ShoesTrunk.</NavLink>
             <ul className="list-items active">
                 <li><a href="">New&featured</a></li>
                 <li><a href="">Men</a></li>
@@ -40,7 +40,7 @@ import { NavLink, Outlet } from "react-router-dom";
             <ul className="interract-items">
                 <li><a href=""><img src={search} alt="search"/></a></li>
                 <li><NavLink to={"Likes_page"} href=""><img src={heart} alt="Likes"/></NavLink></li>
-                <li><a to={"Carte"} href=""><img src={cart} alt="carte"/></a></li>      
+                <li><NavLink to={"Carte"} href=""><img src={cart} alt="carte"/></NavLink></li>      
             </ul>
             <div className="toggle" onClick={()=>{
                 // console.log(document.querySelector('.list-items'));

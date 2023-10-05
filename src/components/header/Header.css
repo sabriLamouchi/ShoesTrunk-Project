@@ -49,7 +49,7 @@ header .list-items li:hover a{
 }
 header>a{
     font-size: 30px;
-    text-decoration:none;
+    text-decoration:inherit;
     color:black;
     position: relative;
     animation:logo-entering 1s alternate ease-in-out ;
@@ -225,7 +225,7 @@ header.active{
         align-content: center;
         position: relative;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         top: 0;
         position: sticky;
         z-index: 999;
@@ -268,7 +268,7 @@ header.active{
 @media (max-width:375px){
     header{
         justify-content: space-around;
-        flex-wrap: nowrap;
+        flex-wrap:nowrap;
     }
 
     header>a{

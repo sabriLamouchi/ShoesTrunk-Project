@@ -47,7 +47,7 @@ function App() {
   const router=createBrowserRouter(
     createRoutesFromElements(
       <Route element={<Header/>} >
-        <Route index element={<Home/>}></Route>
+        <Route path="/shoesTrunk-Project" element={<Home/>}></Route>
         <Route path='Likes' element={<Likes_Page/>}></Route>
 
 

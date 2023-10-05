@@ -1,6 +1,9 @@
 import React from "react";
 import Lottie from 'react-lottie';
 import notFoundAnimation from '../jsonFiles/NotFound Page.json'
+import pageNotFound from '../jsonFiles/pageNotFound.json'
+import '../App.css'
+import { Link, NavLink } from "react-router-dom";
 export default function NotFound(){
 
     const defaultOptions = {
@@ -12,11 +15,17 @@ export default function NotFound(){
         }
     }
     return(
-        <React.Fragment>
-            <p>This Page Not Found</p>
-            <Lottie options={defaultOptions}
-              height={700}
-              width={800}/>
+        <React.Fragment className="notfound">
+            <div className="notFound">
+                <section className="flex-column">
+                    <p>We couldn’t find the page you’re looking for.</p>
+                    <NavLink to={"/shoesTrunk-Project"}>Back to HomePage</NavLink>
+                </section>
+                <Lottie options={defaultOptions}
+                height={400}
+                width={700}/>
+            </div>
+
         </React.Fragment>
     )
 }
