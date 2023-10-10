@@ -1,7 +1,7 @@
 import React from "react";
 
 import Product from "./Product";
-import products from "./Products";
+import products from "./PopuProducts"
 
 import './container_2.css'
 
@@ -12,8 +12,12 @@ import { Pagination } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-export default function container_2(){
 
+//Importer UseCart
+import { Item } from "react-use-cart";
+
+
+export default function container_2(){
 
    const shoes= products.map((prod)=>{
         return (
@@ -22,24 +26,15 @@ export default function container_2(){
                     img={prod.img}
                     name={prod.name}
                     price={prod.price}
+                    item={prod}
                     />
             </SwiperSlide>
-            // <Product 
-            // key={prod.key}
-            // img={prod.img}
-            // name={prod.name}
-            // price={prod.price}
-            // />
  )
     })
 
     return(
         <div className=" cont container">
             <h1>popular Product</h1>
-            {/* <div className="products">
-                {shoes}
-
-            </div> */}
             <div className="products">
                 <Swiper 
                      pagination={{

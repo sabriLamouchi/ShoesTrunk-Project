@@ -19,63 +19,63 @@
     
      const products=[
         {
-            id:1,
+            id:9,
             img:require('./mens shoes/air-jordan-1-mid-mens-shoes.png'),
             name:'air_jordan_1_mid_mens_shoes',
-            price:'300$'
+            price:'300'
         },
 
         {
-            id:2,
+            id:10,
             img:require('./mens shoes/air-jordan-3-retro-mens-shoes.png'),
             name:'air_jordan_3_retro_mens_shoes',
-            price:"350$"
+            price:"350"
         },
 
         {
-            id:3,
+            id:11,
             img:require('./mens shoes/air-jordan-7-retro-mens-shoes.png'),
             name:'air_jordan_7_retro_mens_shoes',
-            price:"130$"
+            price:"130"
         },
 
         {
-            id:4,
+            id:12,
             img:require('./womens shoes/air-jordan-1-mid-womens-shoes-Kg.png'),
             name:'air_jordan_1_mid_womens_shoes_Kg',
-            price:'350$'
+            price:'350'
         },
 
         {
-            id:5,
+            id:13,
             img:require('./womens shoes/air-max-bella-tr-5-womens-workout-shoes.png'),
             name:'air_max_bella_tr_5_womens_workout_shoes',
-            price:"200$"
+            price:"200"
         },
         
         {
-            id:6,
+            id:14,
             img:require('./womens shoes/air-max-correlate-womens-shoes.png'),
             name:'air_max_correlate_womens_shoes',
-            price:'180$'
+            price:'180'
         },
         {
-            id:7,
+            id:15,
             img:require('./kids shoes/air-force-1-lv8-big-kids-shoes.png'),
             name:'air_force_1_big_kids_shoes.png',
-            price:'300$'
+            price:'300'
         },
         {
-            id:8,
+            id:16,
             img:require('./kids shoes/air-max-97-big-kids-shoes.png'),
             name:'air_max_97_big_kids_shoes',
-            price:'250$'
+            price:'250'
         },
         {
-            id:9,
+            id:17,
             img:require('./kids shoes/ja-1-day-one-big-kids-basketball.png'),
             name:'one_big_kids_basketball',
-            price:'250$'
+            price:'250'
         }
     ]
     export default products;

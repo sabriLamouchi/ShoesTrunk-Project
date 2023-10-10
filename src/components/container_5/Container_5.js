@@ -94,6 +94,7 @@ export default function Container_5(){
             name={prod.name}
             img={prod.img}
             price={prod.price}
+            item={prod}
             />
         )
     })

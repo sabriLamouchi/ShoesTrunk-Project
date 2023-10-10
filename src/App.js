@@ -22,6 +22,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 
 //ErrorBoundary:
 import ErrorBoundary from './ErrorBoundary';
+import AddCart from './pages/AddCart';
+import { CartProvider } from 'react-use-cart';
 
 
 function App() {
@@ -48,9 +50,8 @@ function App() {
     createRoutesFromElements(
       <Route element={<Header/>} >
         <Route path="/shoesTrunk-Project" element={<Home/>}></Route>
-        <Route path='Likes' element={<Likes_Page/>}></Route>
-
-
+       <Route path='AddCart' element={ <AddCart/> }></Route>
+       <Route path='Likes' element={<Likes_Page/>}></Route>
         {/* Not Found Page 404 Error */}
         <Route path='*' element={<NotFound/>}></Route>
       </Route>
@@ -95,6 +96,7 @@ function App() {
         //  </>
 
         //router Provider :
+
         <RouterProvider router={router}/>
        }
 

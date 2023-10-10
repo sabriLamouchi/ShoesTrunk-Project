@@ -8,6 +8,8 @@ import Container_4 from '../components/container_4/Container_4'
 import Container_5 from '../components/container_5/Container_5'
 import Container_6 from '../components/container_6/Container_6'
 import { useAnimation, useInView,motion} from 'framer-motion'
+import { CartProvider } from 'react-use-cart'
+import AddCart from './AddCart'
 export default function Home(){
     const ref=useRef(null)
     const inview=useInView(ref, {once:true});
@@ -20,7 +22,7 @@ export default function Home(){
     return(
         <>
         <Container_1/>
-        <Container_2/>
+          <Container_2/>
         <motion.div
           ref={ref}
                   variants={{
@@ -36,7 +38,7 @@ export default function Home(){
           <Container_3/>
         </motion.div>
         <Container_4/>
-        <Container_5/>
+          <Container_5/>
         <Container_6/>
         <Footer/>
         </>
