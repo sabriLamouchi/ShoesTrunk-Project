@@ -14,7 +14,6 @@ export default function Container_4(){
                 </p>
                 <div className="button"></div>
             </div>
-
         </div>
     );
 }

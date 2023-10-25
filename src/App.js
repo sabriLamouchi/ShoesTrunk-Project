@@ -12,6 +12,7 @@ import Container_6 from './components/container_6/Container_6.js'
 import Home from './pages/Home';
 import Likes_Page from './pages/Likes_Page'
 import NotFound from './pages/NotFound';
+import Help from './pages/Help';
 //BIB:
 
 import Footer from './components/Footer/Footer.js'
@@ -20,30 +21,20 @@ import React,{useRef,useEffect, useState} from 'react';
 import RingLoader from "react-spinners/RingLoader";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-//ErrorBoundary:
-import ErrorBoundary from './ErrorBoundary';
 import AddCart from './pages/AddCart';
 import { CartProvider } from 'react-use-cart';
 
 
+
 function App() {
-  const ref=useRef(null)
-  const inview=useInView(ref, {once:true});
-  const mainAnimation=useAnimation();
-  useEffect(()=>{
-    if(inview){
-      mainAnimation.start('visible')
-    }
-  },[inview])
-  
   // loaing page animation:
-  const [loading,sertloading]=useState(false);
+  const [loading,setloading]=useState(false);
 
   useEffect(()=>{
-    sertloading(true)
+    setloading(true)
     setTimeout(()=>{
-      sertloading(false)
-    },2000);
+      setloading(false)
+    },4000);
   },[])
   //Router Browser:
   const router=createBrowserRouter(
@@ -52,6 +43,9 @@ function App() {
         <Route path="/shoesTrunk-Project" element={<Home/>}></Route>
        <Route path='AddCart' element={ <AddCart/> }></Route>
        <Route path='Likes' element={<Likes_Page/>}></Route>
+
+       <Route path="Help" element={<Help/>}></Route>
+
         {/* Not Found Page 404 Error */}
         <Route path='*' element={<NotFound/>}></Route>
       </Route>
@@ -96,8 +90,8 @@ function App() {
         //  </>
 
         //router Provider :
-
-        <RouterProvider router={router}/>
+        <CartProvider>
+        <RouterProvider router={router}/></CartProvider>
        }
 
     </div>

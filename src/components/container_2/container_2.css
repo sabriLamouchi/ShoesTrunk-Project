@@ -114,6 +114,13 @@
 .shoes button.add-to-cart:hover{
     box-shadow: -10px 10px var(--yallow);
 }
+.shoes button.add-to-cart:focus{
+    box-shadow: -10px 10px var(--Orange);
+    color: var(--dark);
+}
+.shoes button.add-to-cart:focus::before{
+    background-color: var(--yallow);
+}
 
 
 .container .products{

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import './container_5.css'
-
+import { motion, useAnimation, useInView } from "framer-motion";
 
 // // Mens shoes:
 // import men1 from './mens shoes/air-jordan-1-mid-mens-shoes.png'
@@ -24,68 +24,13 @@ import products from './products'
 import Product from "../container_2/Product";
 export default function Container_5(){
 
-
-    // const products=[
-    //     {
-    //         id:1,
-    //         img:men1,
-    //         name:'air_jordan_1_mid_mens_shoes',
-    //         price:'300$'
-    //     },
-
-    //     {
-    //         id:2,
-    //         img:men2,
-    //         name:'air_jordan_3_retro_mens_shoes',
-    //         price:"350$"
-    //     },
-
-    //     {
-    //         id:3,
-    //         img:men3,
-    //         name:'air_jordan_7_retro_mens_shoes',
-    //         price:"130$"
-    //     },
-
-    //     {
-    //         id:4,
-    //         img:women1,
-    //         name:'air_jordan_1_mid_womens_shoes_Kg',
-    //         price:'350$'
-    //     },
-
-    //     {
-    //         id:5,
-    //         img:womnen2,
-    //         name:'air_max_bella_tr_5_womens_workout_shoes',
-    //         price:"200$"
-    //     },
-        
-    //     {
-    //         id:6,
-    //         img:women3,
-    //         name:'air_max_correlate_womens_shoes',
-    //         price:'180$'
-    //     },
-    //     {
-    //         id:7,
-    //         img:kid1,
-    //         name:'air_force_1_big_kids_shoes.png',
-    //         price:'300$'
-    //     },
-    //     {
-    //         id:8,
-    //         img:kid2,
-    //         name:'air_max_97_big_kids_shoes',
-    //         price:'250$'
-    //     },
-    //     {
-    //         id:9,
-    //         img:kid3,
-    //         name:'one_big_kids_basketball',
-    //         price:'250$'
-    //     }
-    // ]
+    const ref=useRef(null)
+    const inview=useInView(ref, {once:true});
+    const mainAnimation=useAnimation();
+    useEffect(()=>{
+        if(inview){
+            mainAnimation.start('visible')}
+    },[inview]);
 
     const shoes=products.map((prod)=>{
         return(
@@ -102,9 +47,16 @@ export default function Container_5(){
     return (
         <div className="cont container_5">
             <h1>Step into Style with New Arrivals!</h1>
-            <div className="products">
+            <motion.div
+            variants={{
+                hiden:{opacity:0, x:-100},
+                visible:{opacity:1,x:0}
+            }}
+            initial="hodden"
+            animate={mainAnimation}
+            className="products">
                 {shoes}
-            </div>
+            </motion.div>
         </div>
     );
 }

@@ -24,13 +24,17 @@
       flex-direction: row;
       flex-wrap: nowrap;
     }
+.add_cart{
+  width: 100%;
+  display: block;
 
+
+}
 .cart_container{
   width: 80%;
-  position: absolute;
+  position: relative;
   margin-left: 10%;
-  margin-top: 10%;
-  
+  margin-right: 10%;
 }
 .cart_container .header-cart{
   flex-direction: row;
@@ -137,60 +141,60 @@
   font-family: "cairo";
   color:var(--Orange);
 }
-.cart_container .checkout-banner{
+
+/* Check_Banner_Style */
+.add_cart .checkout-banner{
   width: 100%;
   height: 20vh;
-  margin: 0;
   position: sticky;
-  justify-content: space-between;
   bottom: 0;
-  border-top:1px solid var(--dark)
+  justify-content: space-between;
+  border-top:1px solid var(--dark);
 }
-.cart_container .checkout-banner::before{
+.add_cart .checkout-banner::before{
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
   background-color: var(--gray);
   filter:blur(50px)  ;
   z-index: -1;
 
 /* From glass-effect */
   background: rgba(255, 255, 255, 0.33);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: 50px 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.1px);
   -webkit-backdrop-filter: blur(5.1px);
-  border: 1px solid rgba(255, 255, 255, 0.29);
+  border: none;
   }
-.cart_container .checkout-banner .info {
+.add_cart .checkout-banner .info {
   align-items: start;
 }
-.cart_container .checkout-banner .info span{
+.add_cart .checkout-banner .info span{
   font-size: 2.5vw;
   text-align: left;
   font-family: 'montserrat';
 }
-.cart_container .checkout-banner .info span a{
+.add_cart .checkout-banner .info span a{
   font-size: 5vw;
 }
-.cart_container .checkout-banner .info p{
+.add_cart .checkout-banner .info p{
   font-size: 1.5vw;
   opacity: 70%;
 }
-.cart_container .checkout-banner button{
+.add_cart .checkout-banner button{
   background-color: var(--Orange);
   color: var(--gray);
   font-size: 5vw;
   border: none;
-  border-radius: 10px;
+  border-radius: 10px ;
   font-family: 'montserrat';
   cursor: pointer;
   transition: all 300ms ease-in-out;
 }
-.cart_container .checkout-banner button:hover{
+.add_cart .checkout-banner button:hover{
   color: var(--Orange);
   background-color: var(--gray);
   box-shadow: -10px 10px var(--Orange);
@@ -229,16 +233,16 @@
 
 
   /* banner chekout */
-  .cart_container .checkout-banner .info {
-   
+  .add_cart .checkout-banner .info {
+  width: 80%;
   }
-  .cart_container .checkout-banner .info span{
+  .add_cart .checkout-banner .info span{
     font-size: 3.5vw;
   }
-  .cart_container .checkout-banner .info span a{
-    font-size: 7vw;
+  .add_cart .checkout-banner .info span a{
+    font-size: 8vw;
   }
-  .cart_container .checkout-banner .info p{
+  .add_cart .checkout-banner .info p{
     font-size: 2vw;
     opacity: 70%;
   }

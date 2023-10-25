@@ -13,10 +13,9 @@ const AddCart = () => {
         removeItem,
         emptyCart
     }=useCart();
-    console.log(totalItems)
     const cartItem=items.map((item)=>{
         return(
-             <div className='item-container  flex-row'>
+             <div className='item-container  flex-row' key={item.id}>
                 <div className='item flex-row'>
                     <img src={item.img} alt={item.name}/>
                 </div>
@@ -39,31 +38,37 @@ const AddCart = () => {
     if (isEmpty) {return <div><h1>Your Cart is Empty</h1></div>}
     return (   
         <>
-        <div className='cart_container '>
-            <section className='header-cart flex-column'>
-                <h1>Your Shoping Cart</h1>
-                <button className='flex-row'
-                onClick={()=>{emptyCart()}}><img src={cart_cross}
-                />Empty Cart</button>
-            </section>
-            <div className='addToCart-section'>
-                <nav>
-                    <ul className='flex-row'>
-                        <li>ITEM</li>
-                        <li>QUANTITY</li>
-                        <li>PRICE</li>
-                    </ul>
-                </nav>
-                {cartItem}
-            </div>
-            <div className='checkout-banner flex-row'>
-                    <div className='info flex-column'>
-                        <span >Total Price <a>${cartTotal}</a></span>
-                        <p>Shipment costs will be calculated at checkout.</p>
-                    </div>
-                    <button>checkout{">>"}</button>
+        <div className='add_cart ' >
+            <div className='cart_container'>
+            
+                <section className='header-cart flex-column'>
+                    <h1>Your Shoping Cart</h1>
+                    <button className='flex-row'
+                    onClick={()=>{emptyCart()}}><img src={cart_cross}
+                    />Empty Cart</button>
+                </section>
+                <div className='addToCart-section'>
+                    <nav>
+                        <ul className='flex-row'>
+                            <li>ITEM</li>
+                            <li>QUANTITY</li>
+                            <li>PRICE</li>
+                        </ul>
+                    </nav>
+                    {cartItem}
                 </div>
+
+            </div>
+
+            <div className='checkout-banner flex-row'>
+                        <div className='info flex-column'>
+                            <span >Total Price <a>${cartTotal}</a></span>
+                            <p>Shipment costs will be calculated at checkout.</p>
+                        </div>
+                        <button>checkout{">>"}</button>
+            </div>
         </div>
+        
 
                 </> 
     );
