@@ -8,6 +8,25 @@ import {motion} from "framer-motion"
 export default function Container_1(){
 
     const elementRef=useRef();
+    
+    useEffect(()=>{
+        const handleScroll=()=>{
+            if(window.scrollY>700)
+                document.querySelector(".scrollUp").classList.add("active")
+            else
+                document.querySelector(".scrollUp").classList.remove("active")
+
+                document.querySelector(".scrollUp").onClick=()=>{
+                    console.log("here");
+                }
+        }
+        window.addEventListener("scroll",handleScroll)
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
+    },[window.screenY])
+
 
 
     const scrollTop=()=>{
