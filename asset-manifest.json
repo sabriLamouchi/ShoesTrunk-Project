@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shoesTrunk-Project/static/css/main.1d902d7e.css",
-    "main.js": "/shoesTrunk-Project/static/js/main.f3c83e33.js",
+    "main.css": "/shoesTrunk-Project/static/css/main.aec80de4.css",
+    "main.js": "/shoesTrunk-Project/static/js/main.bbbcbe6f.js",
     "static/media/cameraMenSplash.svg": "/shoesTrunk-Project/static/media/cameraMenSplash.c7d29de77dda26361a75ec05e113dc2b.svg",
     "static/media/shoestrunk1.png": "/shoesTrunk-Project/static/media/shoestrunk1.ef7f33a28d5f5a34a83d.png",
     "static/media/shoes.svg": "/shoesTrunk-Project/static/media/shoes.1c2a8e843fa6435849ca24f64944802c.svg",
@@ -33,11 +33,11 @@
     "static/media/heart.svg": "/shoesTrunk-Project/static/media/heart.c7add577cc256c6dc314f8ca044cab8b.svg",
     "static/media/add-icon.svg": "/shoesTrunk-Project/static/media/add-icon.0f4752722a3df0d81a0e065197fb9f85.svg",
     "static/media/search.svg": "/shoesTrunk-Project/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
-    "main.1d902d7e.css.map": "/shoesTrunk-Project/static/css/main.1d902d7e.css.map",
-    "main.f3c83e33.js.map": "/shoesTrunk-Project/static/js/main.f3c83e33.js.map"
+    "main.aec80de4.css.map": "/shoesTrunk-Project/static/css/main.aec80de4.css.map",
+    "main.bbbcbe6f.js.map": "/shoesTrunk-Project/static/js/main.bbbcbe6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d902d7e.css",
-    "static/js/main.f3c83e33.js"
+    "static/css/main.aec80de4.css",
+    "static/js/main.bbbcbe6f.js"
   ]
 }
