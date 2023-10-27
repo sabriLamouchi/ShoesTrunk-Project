@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shoesTrunk-Project/static/css/main.aec80de4.css",
-    "main.js": "/shoesTrunk-Project/static/js/main.527fe9c0.js",
+    "main.css": "/shoesTrunk-Project/static/css/main.f32edf60.css",
+    "main.js": "/shoesTrunk-Project/static/js/main.14a17b9a.js",
     "static/media/cameraMenSplash.svg": "/shoesTrunk-Project/static/media/cameraMenSplash.c7d29de77dda26361a75ec05e113dc2b.svg",
     "static/media/shoestrunk1.png": "/shoesTrunk-Project/static/media/shoestrunk1.ef7f33a28d5f5a34a83d.png",
     "static/media/shoes.svg": "/shoesTrunk-Project/static/media/shoes.1c2a8e843fa6435849ca24f64944802c.svg",
@@ -16,6 +16,7 @@
     "static/media/air-jordan-1-mid-womens-shoes-Kg.png": "/shoesTrunk-Project/static/media/air-jordan-1-mid-womens-shoes-Kg.093706882516f31067ba.png",
     "static/media/ja-1-day-one-big-kids-basketball.png": "/shoesTrunk-Project/static/media/ja-1-day-one-big-kids-basketball.225bde33438e68e32584.png",
     "static/media/air-max-bella-tr-5-womens-workout-shoes.png": "/shoesTrunk-Project/static/media/air-max-bella-tr-5-womens-workout-shoes.8395d23f956eaa39a76d.png",
+    "static/media/help_image_banner_1.jpeg": "/shoesTrunk-Project/static/media/help_image_banner_1.572cea92e4b20e9369fb.jpeg",
     "static/media/air-jordan-7-retro-mens-shoes.png": "/shoesTrunk-Project/static/media/air-jordan-7-retro-mens-shoes.2220da4800a44f2114a6.png",
     "static/media/air-max-correlate-womens-shoes.png": "/shoesTrunk-Project/static/media/air-max-correlate-womens-shoes.6d87051286deacdcb380.png",
     "static/media/air-force-1-07-lx-womens-shoes.png": "/shoesTrunk-Project/static/media/air-force-1-07-lx-womens-shoes.3257480cb9ecf76dcc97.png",
@@ -25,6 +26,7 @@
     "static/media/air-force-1-lv8-big-kids-shoes.png": "/shoesTrunk-Project/static/media/air-force-1-lv8-big-kids-shoes.f2903aa8b88f0c39934a.png",
     "static/media/blazer-mid-77-womens-shoes.png": "/shoesTrunk-Project/static/media/blazer-mid-77-womens-shoes.784971fad221eb6e1472.png",
     "static/media/Through.svg": "/shoesTrunk-Project/static/media/Through.f44d82b032ae3923765bbbecc0db5711.svg",
+    "static/media/help_image_banner_2.jpeg": "/shoesTrunk-Project/static/media/help_image_banner_2.04085cae646fc962c3d6.jpeg",
     "static/media/Express.svg": "/shoesTrunk-Project/static/media/Express.2b616a5fb02c1449b76f2a13a8c154c1.svg",
     "static/media/copyright.svg": "/shoesTrunk-Project/static/media/copyright.9aecb1371182824b2b9d23f978758334.svg",
     "static/media/cart-cross.svg": "/shoesTrunk-Project/static/media/cart-cross.0c7f033daece8816eebcbfb21030af53.svg",
@@ -33,11 +35,11 @@
     "static/media/heart.svg": "/shoesTrunk-Project/static/media/heart.c7add577cc256c6dc314f8ca044cab8b.svg",
     "static/media/add-icon.svg": "/shoesTrunk-Project/static/media/add-icon.0f4752722a3df0d81a0e065197fb9f85.svg",
     "static/media/search.svg": "/shoesTrunk-Project/static/media/search.01da7b90b09620b3b6c61977cfa584e0.svg",
-    "main.aec80de4.css.map": "/shoesTrunk-Project/static/css/main.aec80de4.css.map",
-    "main.527fe9c0.js.map": "/shoesTrunk-Project/static/js/main.527fe9c0.js.map"
+    "main.f32edf60.css.map": "/shoesTrunk-Project/static/css/main.f32edf60.css.map",
+    "main.14a17b9a.js.map": "/shoesTrunk-Project/static/js/main.14a17b9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.aec80de4.css",
-    "static/js/main.527fe9c0.js"
+    "static/css/main.f32edf60.css",
+    "static/js/main.14a17b9a.js"
   ]
 }
