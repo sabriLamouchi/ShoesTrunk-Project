@@ -12,7 +12,7 @@ import Container_6 from './components/container_6/Container_6.js'
 import Home from './pages/Home';
 import Likes_Page from './pages/Likes_Page'
 import NotFound from './pages/NotFound';
-import Help from './pages/Help';
+import Help, { ContactAction } from './pages/Help';
 //BIB:
 
 import Footer from './components/Footer/Footer.js'
@@ -44,7 +44,7 @@ function App() {
        <Route path='AddCart' element={ <AddCart/> }></Route>
        <Route path='Likes' element={<Likes_Page/>}></Route>
 
-       <Route path="Help" element={<Help/>}></Route>
+       <Route path="Help" element={<Help/>} action={ContactAction}></Route>
 
         {/* Not Found Page 404 Error */}
         <Route path='*' element={<NotFound/>}></Route>

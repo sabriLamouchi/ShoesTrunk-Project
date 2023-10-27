@@ -1,0 +1,160 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    --softgrey:#c8c8c8;
+    --soft-blue:#5FFBF1;
+    }
+
+.help{
+    display: grid;
+    grid-template-columns: repeat(2,50%) ;
+    position: relative;
+    background-color: black;
+}
+.help >div{
+    width: 100%;
+}
+
+.help .banner-section{
+    background: var(--gray);
+    width: 100%;
+    grid-column: span 2;
+}
+.help .banner-section img{
+    width: 100%;
+}
+
+.help .faq{
+    background-color: var(--dark);
+}
+
+/* contact banner-section */
+.help .contact{
+    background-color: var(--gray);
+}
+
+.help h2{
+    font-size: 5vw;
+    font-family: 'cairo',sans-serif;
+    text-shadow: -5px 5px  var(--Orange),
+                -10px 10px  var(--dark);
+}
+.help .contact form{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    gap: 5vw 1vw;
+    margin: 5vw;
+    font-size: 2.5vw;
+    font-family: 'cairo',sans-serif;
+    transition: all 300ms ease-in-out;
+}
+
+.help .contact form input[type="email"],
+.help .contact form textarea,
+.help .contact form button{
+    grid-column: span 2;
+}
+.help .contact form input{
+    height: 4vw;
+    border:1px solid var(--gray);
+    border-radius: 10px;
+    background-color: var(--softgrey);
+    color: var(--dark);
+    outline: none;
+    font-family: "cairo";
+    font-size: 1.8vw;
+}
+.help .contact form input:focus{
+    border:2px solid var(--Orange);
+    box-shadow:  0 0 50px inset var(--gray);
+}
+.help .contact form input::placeholder,
+.help .contact form textarea::placeholder{
+    font-family: 'cairo';
+    transition: all 300ms ease-in-out;
+}
+.help .contact form input:focus::placeholder,
+.help .contact form textarea:focus::placeholder{
+    position: relative;
+    background-color: var(--gray);
+    color: var(--black);
+    width: fit-content;
+    font-size: 1.5vw;
+}
+.help .contact form textarea{
+    width: 40vw;
+    height: 10vh;
+    border: 2px solid var(--Orange);
+    border-radius: 10px ;
+    font-size: 1.2vw;
+    margin :0 auto;
+}
+
+.help .contact form button{
+    width: 15vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2vw;
+    font-family: "cairo",sans-serif;
+    background: transparent;
+    border: 1px solid var(--dark);
+    cursor: pointer;
+    box-shadow: -5px 5px var(--Orange);
+    border-radius: 15px;
+    transition: all 300ms ease-in-out;
+}
+.help .contact form button:hover{
+    box-shadow: -10px 10px var(--yallow);
+    background-color: var(--Orange);
+    color: var(--gray);
+}
+
+/* error messsage styling */
+
+.help form >p{
+   margin: 0 auto;
+   grid-column: span 2;
+   color: var(--Orange);
+   text-decoration: underline;
+
+}
+
+@media (max-width:688px){
+    .help{
+        display: flex;
+        flex-direction: column;
+    }
+    .help h2{
+       font-size: 10vw;
+    }
+    .help .faq{
+        height: 500px;
+        width: 100%;
+        order: 3;
+    }
+    .help .contact form {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .help .contact form input{
+        height: 10vh;
+        font-size: large;
+    }
+    .help .contact form button{
+        width: 20vw;
+        height: 8vw;
+    }
+    .help .contact form textarea{
+        width: 50%;
+    }
+    .help form >p{
+        font-size: 4.5vw;
+    }
+}

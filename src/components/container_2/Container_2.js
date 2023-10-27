@@ -8,7 +8,7 @@ import './container_2.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination,Navigation,Scrollbar,A11y,Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -37,8 +37,10 @@ export default function container_2(){
             <h1>popular Product</h1>
             <div className="products">
                 <Swiper 
-                     pagination={{
-                         dynamicBullets: true,
+                modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+                    autoplay={{
+                        delay:2500,
+                        pauseOnMouseEnter:true
                     }}
                     spaceBetween={40}
                     slidesPerView={3}
