@@ -8,26 +8,33 @@ import { CartProvider,useCart } from "react-use-cart";
 
  export default function Header(props){
 
-    const elementRef=useRef();
+    
     // ::::::::::::::::::::::
         // use cart:
 
         const{
             totalUniqueItems,
             totalItems,
-            isEmpty
+            isEmpty,
+            cartTotal
         }=useCart()
-        console.log(isEmpty);
-        const [total,setTotal]=useState(false);
-    useEffect(()=>{
-        if(totalItems!=0){
-            setTotal(true)
-        }
-            
-    
-    },[totalItems])
+        const [total,setTotal]=useState(0);
     useEffect(()=>{
 
+        const clIn=setInterval(() => {
+            const items=JSON.parse(window.localStorage.getItem('react-use-cart'));
+            setTotal(items.totalItems);
+        }, 1000);
+        return ()=>{
+            clearInterval(clIn);
+        }
+    },[])
+
+
+
+
+    const elementRef=useRef();
+    useEffect(()=>{
     const handleScroll=()=>{
         if(window.scrollY!=0){
         //   console.log(elementRef.current.getBoundingClientRect());
@@ -49,7 +56,6 @@ import { CartProvider,useCart } from "react-use-cart";
 
     return (
         <>
-        <CartProvider>
         <header ref={elementRef}>
             <NavLink style={{display:"block"}} to={'/shoesTrunk-Project'}>ShoesTrunk.</NavLink>
             <ul className="list-items active">
@@ -63,13 +69,8 @@ import { CartProvider,useCart } from "react-use-cart";
             <ul className="interract-items">
                 <li><img src={search} alt="search"/></li>
                 <li><NavLink style={{display:"block"}} to={"Likes_page"}><img src={heart} alt="Likes"/></NavLink></li>
-                <li carte_attr={
-                    
-                        total?
-                         totalItems:
-                         ""
-                    
-                } className="carte_attr"><NavLink style={{display:"block"}} to={"AddCart"} href=""><img src={cart} alt="carte"/></NavLink></li>      
+                <li carte_attr={total? total:""
+                         } className="carte_attr"><NavLink style={{display:"block"}} to={"AddCart"} href=""><img src={cart} alt="carte"/></NavLink></li>      
             </ul>
             <div className="toggle" onClick={()=>{
                 // console.log(document.querySelector('.list-items'));
@@ -101,7 +102,6 @@ import { CartProvider,useCart } from "react-use-cart";
             </div>
             
         </header>
-        </CartProvider>
         <CartProvider>
             <Outlet/>
         </CartProvider>

@@ -84,6 +84,11 @@
     width: 80%;
     word-wrap: break-word;
 }
+.shoes h3::first-letter{
+    text-transform: uppercase;
+    font-size: 2.3vw;
+    color: var(--Orange);
+}
 .shoes button.add-to-cart{
     width: 10vw;
     height: 3.5vw;
@@ -133,7 +138,7 @@
     transition: all 300ms ease-in-out;
 }
 .container .products .shoes:hover img{
-    transform: scale(1.4) translateY(-45px);
+    transform: scale(1.4) translateY(-25px);
     filter: none;
 }
 

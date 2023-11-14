@@ -11,6 +11,12 @@ import swipercore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay'
 import { Pagination,Navigation,Scrollbar,A11y,Autoplay } from 'swiper/modules';
+
+
+//components-pages:
+import Contact from './contactPage/Contact';
+import Faqs from './faqsPage/Faqs';
+
 const Help = () => {
 
     const actionData=useActionData();
@@ -45,25 +51,10 @@ const Help = () => {
                         {images}
             </Swiper>
             </div>
-            <div className='faq'>
-                
-            </div>
-            <div className='contact'>
-                <h2>Contact US</h2>
-                <Form method='post' action='/help'>
-                    <input type='text' name='name' required placeholder='Name'/>
-                    <input type='text' name='lastname' required placeholder='lastname'/>
-                    <input type='email' name='mail' required placeholder='e-mail'/>
-                    <textarea name='message' placeholder='Your message'></textarea>
-                    <button type='submit'>Submit</button>
-                    {/* implimentation of  errors */}
-                    <>
-                    {actionData && actionData.error && <p>{actionData.error}</p>}
-                    </>
-                    
-                </Form>
-
-            </div>
+            {/* FAQS Compnent */}
+            <Faqs/>
+            {/* Contact Component */}
+            <Contact/>
         </div>
     );
 };

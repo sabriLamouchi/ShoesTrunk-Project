@@ -13,12 +13,11 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height:80px;
+    height:5rem;
     border-bottom: 1px solid black;
     font-family: "Cairo",sans-serif;
     flex-wrap:nowrap;
     top: 0;
-    
     z-index: 998;
 }
 * {
@@ -79,7 +78,7 @@ header .interract-items li{
 }
 header .interract-items li img{
     width:30px;
-    height:30px;
+    aspect-ratio: 1;
     transition: all .25s ease-in-out;
     margin-right: 10px;
     background-color:var(--gray);
@@ -97,14 +96,19 @@ header .interract-items li a.active img {
 header .interract-items li.carte_attr::before{
     content: attr(carte_attr);
     position: absolute;
-    text-align: center;
     top: -10%;
     right: 0;
     background-color: var(--Orange);
+    color:var(--gray);
+    font-weight: 700;
+    font-family:"montserrat",sans-serif;
     width: 50%;
     height: 50%;
     border-radius: 50%;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -334,7 +338,7 @@ header.active{
     }
     header .interract-items li img{
         aspect-ratio: 1;
-        width: 30px;
+        width: 25px;
         
     }
 }

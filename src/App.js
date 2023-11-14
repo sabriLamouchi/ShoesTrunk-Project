@@ -91,7 +91,8 @@ function App() {
 
         //router Provider :
         <CartProvider>
-        <RouterProvider router={router}/></CartProvider>
+        <RouterProvider router={router}/>
+        </CartProvider>
        }
 
     </div>
