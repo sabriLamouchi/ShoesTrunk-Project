@@ -1,15 +1,21 @@
 :root{
-    --Orange: rgb(244, 111, 15);
-    --violet: rgb(94, 79, 230);
-    
-    --gray: rgb(246, 246, 246);
-    
-    --yallow: rgb(255, 198, 60);
-    --black:black;
-    --dark:#27374D;
-    --softgrey:#c8c8c8;
-    --soft-blue:#5FFBF1;
-    }
+  --Orange: rgb(244, 111, 15);
+  --violet: rgb(94, 79, 230);
+  
+  --gray: rgb(246, 246, 246);
+  
+  --yallow: rgb(255, 198, 60);
+  --black:	#202020;
+  --dark:#27374D;
+  --softgrey:#c8c8c8;
+  --soft-blue:#5FFBF1;
+  }
+
+*{
+  box-sizing: border-box;
+  transition: all 700ms ease-in-out;
+}
+
   
     .flex-column{
       display: flex;
@@ -82,7 +88,7 @@
 .cart_container .addToCart-section {
   display: grid;
   grid-template-rows: repeat(auto-fit,minmax(0,1fr));
-  gap: 1vw;
+  gap: 1rem 1rem;
 }
 .cart_container .addToCart-section .item-container{
   width: 100%;
@@ -98,15 +104,20 @@
 }
 .cart_container .addToCart-section .item-container  .description{
   flex-wrap: wrap;
-  width: 100%;
+  width: 30vw;
   height: 100%;
 }
 .cart_container .addToCart-section .item-container  .description h3{
-  font-size:1.5vw;
+  font-size:2.5vw;
   width: 80%;
-  margin: 0;
-  text-align: center;
+  margin: 0 auto;
+  text-align: left;
   word-wrap: break-word;
+}
+.cart_container .addToCart-section .item-container  .description h3::first-letter{
+  color: var(--Orange);
+  font-size: 110%;
+  text-transform: capitalize;
 }
 .cart_container .addToCart-section .item-container  .quantity{
   width: 80%;
@@ -216,12 +227,8 @@
   .cart_container .addToCart-section nav ul li{
     font-size: 3vw;
   }
-  .cart_container .addToCart-section .item-container .item img{
-    width: 25vw;
-  }
-  .cart_container .addToCart-section .item-container .item  .description h3{
+  .cart_container .addToCart-section .item-container  .description h3{
     font-size: 2vw;
-
   }
   .cart_container .addToCart-section .item-container .price h3{
     font-size: 5vw;

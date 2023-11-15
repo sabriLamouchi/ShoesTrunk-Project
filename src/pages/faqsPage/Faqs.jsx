@@ -1,9 +1,10 @@
 import React from 'react';
 import './faqs.css'
 import Faq from './Faq';
-import { Questions } from './questions';
+import  Qts  from './questions.json';
 const Faqs = () => {
-    const faqs=Questions.map((answer)=>
+    console.log(Qts);
+    const faqs=Qts.Questions.map((answer)=>
         <Faq Key={answer.id} Headline={answer.headline} Question={answer.question}/>
     )
     return (
