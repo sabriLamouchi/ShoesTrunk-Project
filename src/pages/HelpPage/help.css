@@ -1,0 +1,49 @@
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:#202020;
+    --dark:#27374D;
+    --softgrey:#c8c8c8;
+    --soft-blue:#5FFBF1;
+    }
+
+.help{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(50%,1fr)) ;
+    position: relative;
+}
+.help >div{
+    width: 100%;
+}
+
+.help .banner-section{
+    background: var(--gray);
+    width: 100%;
+    grid-column: span 2;
+}
+.help .banner-section img{
+    width: 100%;
+}
+
+
+
+.help div > h2{
+    font-size: 5vw;
+    font-family: 'cairo',sans-serif;
+    color: var(--black);
+}
+
+@media (max-width:688px){
+    .help{
+        display: flex;
+        flex-direction: column;
+    }
+    .help div> h2{
+       font-size: 10vw;
+    }
+
+}

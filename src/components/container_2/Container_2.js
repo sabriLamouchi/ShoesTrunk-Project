@@ -1,7 +1,7 @@
 import React from "react";
 
-import Product from "./Product";
-import products from "./PopuProducts"
+import Product from "../AllProducts/Product";
+import products from "../../ProductsData/PopuProducts"
 
 import './container_2.css'
 
@@ -31,13 +31,14 @@ export default function container_2(){
             </SwiperSlide>
  )
     })
-
     return(
         <div className=" cont container">
             <h1>popular Product</h1>
             <div className="products">
                 <Swiper 
                 modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+                loop={true}
+                lazy={true}
                     autoplay={{
                         delay:2500,
                         pauseOnMouseEnter:true

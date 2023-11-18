@@ -9,7 +9,7 @@ import Container_5 from '../components/container_5/Container_5'
 import Container_6 from '../components/container_6/Container_6'
 import { useAnimation, useInView,motion} from 'framer-motion'
 import { CartProvider } from 'react-use-cart'
-import AddCart from './AddCart'
+import AddCart from './CartPage/addcart.css'
 export default function Home(){
     const ref=useRef(null)
     const inview=useInView(ref, {once:true});
@@ -29,15 +29,28 @@ export default function Home(){
                     hidden:{opacity:0 , y:100},
                     visible:{ opacity:1 , y:0 }
                 }}
-                initial="hodden"
+                initial="hidden"
                 animate={mainAnimation}
                 transition={{
-                    duration:0.5, delay:0.25
+                    duration:1, delay:0.25
                 }}
         >
           <Container_3/>
         </motion.div>
-        <Container_4/>
+        <motion.div
+          ref={ref}
+                  variants={{
+                    hidden:{opacity:0 , y:100},
+                    visible:{ opacity:1 , y:0 }
+                }}
+                initial="hidden"
+                animate={mainAnimation}
+                transition={{
+                    duration:1, delay:0.75
+                }}
+        >
+          <Container_4/>
+        </motion.div>
           <Container_5/>
         <Container_6/>
         <Footer/>

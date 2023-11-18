@@ -1,15 +1,4 @@
-:root{
-    --Orange: rgb(244, 111, 15);
-    --violet: rgb(94, 79, 230);
-    
-    --gray: rgb(246, 246, 246);
-    
-    --yallow: rgb(255, 198, 60);
-    --black:	#202020;
-    --dark:#27374D;
-    --softgrey:#c8c8c8;
-    --soft-blue:#5FFBF1;
-    }
+
 
 .container h1{
     font-family: 'cairo',sans-serif;
@@ -43,6 +32,7 @@
     border-radius: 50%;
     margin-top: 20px;
     justify-content: center;
+    gap: 1rem;
 }   
 .shoes::before{
     content: '';
@@ -59,7 +49,7 @@
 .shoes img{
     max-width:100%;
     align-self: center;
-    margin-top: -45%;
+    margin-top: -65%;
     filter: drop-shadow(0px 11px 10px var(--dark));
     z-index:100 ;
 }
