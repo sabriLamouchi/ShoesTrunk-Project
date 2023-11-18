@@ -1,7 +1,7 @@
 import React from "react";
 
 import Product from "../AllProducts/Product";
-import products from "../../ProductsData/PopuProducts"
+import products from "../../ProductsData/products"
 
 import './container_2.css'
 
@@ -20,9 +20,10 @@ import { Item } from "react-use-cart";
 export default function container_2(){
 
    const shoes= products.map((prod)=>{
+    if(prod.PopularProd)
         return (
             <SwiperSlide style={{overflow:"visible"}} key={prod.id}>     
-                  <Product 
+                <Product 
                     img={prod.img}
                     name={prod.name}
                     price={prod.price}
