@@ -16,6 +16,9 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    height: fit-content;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .container_5 h1{
