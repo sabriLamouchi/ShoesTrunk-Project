@@ -11,47 +11,57 @@ import { useAnimation, useInView,motion} from 'framer-motion'
 import { CartProvider } from 'react-use-cart'
 import AddCart from './CartPage/addcart.css'
 export default function Home(){
-    const ref=useRef(null)
-    const inview=useInView(ref, {once:true});
-    const mainAnimation=useAnimation();
+    const ref2=useRef(null)
+    const ref5=useRef(null)
+    const inview2=useInView(ref2, {once:true});
+    const inview5=useInView(ref5, {once:true});
+    const mainAnimation2=useAnimation();
+    const mainAnimation5=useAnimation();
     useEffect(()=>{
-      if(inview){
-        mainAnimation.start('visible')
+      if(inview2){
+        mainAnimation2.start('visible')
       }
-    },[inview])
+      if(inview5){
+        mainAnimation5.start('visible')
+      }
+
+    },[inview2,inview5])
+
     return(
         <>
         <Container_1/>
+        <motion.div
+          ref={ref2}
+                  variants={{
+                    hidden:{opacity:0 , y:175},
+                    visible:{ opacity:1 , y:0 }
+                }}
+                initial="hidden"
+                animate={mainAnimation2}
+                transition={{
+                    duration:0.5, delay:0.25,ease: "linear",
+                }}
+        >
           <Container_2/>
+        </motion.div>
+
+        <Container_3/>
+        <Container_4/>
+
         <motion.div
-          ref={ref}
+          ref={ref5}
                   variants={{
                     hidden:{opacity:0 , y:100},
                     visible:{ opacity:1 , y:0 }
                 }}
                 initial="hidden"
-                animate={mainAnimation}
+                animate={mainAnimation5}
                 transition={{
-                    duration:1, delay:0.25
+                    duration:0.5, delay:0.25,ease:'linear'
                 }}
         >
-          <Container_3/>
-        </motion.div>
-        <motion.div
-          ref={ref}
-                  variants={{
-                    hidden:{opacity:0 , y:100},
-                    visible:{ opacity:1 , y:0 }
-                }}
-                initial="hidden"
-                animate={mainAnimation}
-                transition={{
-                    duration:1, delay:0.75
-                }}
-        >
-          <Container_4/>
-        </motion.div>
           <Container_5/>
+        </motion.div>
         <Container_6/>
         <Footer/>
         </>

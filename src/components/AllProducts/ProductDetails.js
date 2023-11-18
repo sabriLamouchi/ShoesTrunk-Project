@@ -16,7 +16,7 @@ const ProductDetails = () => {
 
 export const ProductDetailLoader= async({params})=>{
     const res=await new Promise((resolve, reject) => {
-        return productDetailClicked();
+        resolve()
     })
     console.log(res);
     return res;

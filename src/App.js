@@ -33,11 +33,11 @@ function App() {
     createRoutesFromElements(
       <Route element={<Header/>} >
       <Route path="/shoesTrunk-Project" element={<Home/>}>
-      <Route
-        path=':id'
-        element={<ProductDetails/>}
-        loader={ProductDetailLoader}
-        />
+        <Route
+          path=':id'
+          element={<ProductDetails/>}
+          loader={null}
+          />
       </Route>
 
       <Route path='AddCart' element={ <AddCart/> }></Route>

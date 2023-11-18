@@ -7,13 +7,10 @@ import { NavLink } from "react-router-dom";
 export default function Product(props){
     const{addItem}=useCart(); 
 
-      const hundleProductDetailClick=()=>{
-        productDetailClicked(props.item);
-    }
     const imgRef=useRef()
     useEffect(()=>{
         imgRef.current.ondblclick = (event) => {
-            hundleProductDetailClick();
+            productDetailClicked(props.item);
         };
     },[])
     return( 
@@ -36,6 +33,7 @@ export default function Product(props){
 
 
 export const productDetailClicked=(item)=>{
+    
     return item;
 }
 
