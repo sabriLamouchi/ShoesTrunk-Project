@@ -2,7 +2,7 @@ import './App.css';
 
 //components
 import Header from './components/header/Header'
-import Home from './pages/Home';
+import Home, { productsLoader } from './pages/Home';
 import Likes_Page from './pages/LikePage/Likes_Page'
 import NotFound from './pages/NotFoundPage/NotFound';
 import Help, { ContactAction } from './pages/HelpPage/Help';
@@ -32,12 +32,12 @@ function App() {
   const router=createBrowserRouter(
     createRoutesFromElements(
       <Route element={<Header/>} >
-      <Route path="/shoesTrunk-Project" element={<Home/>}>
-        <Route
+      <Route path="/shoesTrunk-Project" element={<Home/>} loader={productsLoader}>
+        {/* <Route
           path=':id'
           element={<ProductDetails/>}
           loader={null}
-          />
+          /> */}
       </Route>
 
       <Route path='AddCart' element={ <AddCart/> }></Route>

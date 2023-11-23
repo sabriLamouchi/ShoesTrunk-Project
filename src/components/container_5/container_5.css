@@ -17,8 +17,7 @@
     align-items: center;
     position: relative;
     height: fit-content;
-    overflow: scroll;
-    scroll-behavior: smooth;
+
 }
 
 .container_5 h1{
@@ -33,8 +32,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(30%,1fr));
     width: 90%;
+    padding: .75rem;
     gap: 2% 2%;
-
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
 }
 .container_5 .products .shoes{
     justify-content: center;
@@ -73,6 +75,7 @@
 
     .container_5 .products{
         grid-template-columns: repeat(auto-fit,minmax(35%,1fr));
+        width: 98%;
     }
     .container_5 .products .shoes h3{
         font-size: 2.8vw;

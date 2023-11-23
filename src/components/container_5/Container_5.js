@@ -4,10 +4,10 @@ import './container_5.css'
 import { motion, useAnimation, useInView } from "framer-motion";
 
 import products from '../../ProductsData/products'
-
 import Product from "../AllProducts/Product";
-export default function Container_5(){
 
+
+export default function Container_5(props){
     const ref=useRef(null)
     const inview=useInView(ref, {once:true});
     const mainAnimation=useAnimation();
@@ -15,13 +15,12 @@ export default function Container_5(){
         if(inview){
             mainAnimation.start('visible')}
     },[inview]);
-
-    const shoes=products.map((prod)=>{
+    const shoes=props.data.map((prod)=>{
         return(
             <Product
             key={prod.id}
             name={prod.name}
-            img={prod.img}
+            img={prod.images[0]}
             price={prod.price}
             item={prod}
             />

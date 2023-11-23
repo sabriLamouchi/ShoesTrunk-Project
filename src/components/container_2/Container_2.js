@@ -17,14 +17,14 @@ import 'swiper/css/pagination';
 import { Item } from "react-use-cart";
 
 
-export default function container_2(){
+export default function container_2(props){
 
-   const shoes= products.map((prod)=>{
+   const shoes= props.data.map((prod)=>{
     if(prod.PopularProd)
         return (
             <SwiperSlide style={{overflow:"visible"}} key={prod.id}>     
                 <Product 
-                    img={prod.img}
+                    img={prod.images[0]}
                     name={prod.name}
                     price={prod.price}
                     item={prod}
