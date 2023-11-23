@@ -10,7 +10,13 @@ import Container_6 from '../components/container_6/Container_6'
 import { useAnimation, useInView,motion} from 'framer-motion'
 import { CartProvider } from 'react-use-cart'
 import AddCart from './CartPage/addcart.css'
+import { useLoaderData } from 'react-router-dom'
 export default function Home(){
+
+    // Data Load:
+    const data=useLoaderData()
+
+    // ::::::::::::::::::::::::
     const ref2=useRef(null)
     const ref5=useRef(null)
     const inview2=useInView(ref2, {once:true});
@@ -42,7 +48,7 @@ export default function Home(){
                     duration:0.5, delay:0.25,ease: "linear",
                 }}
         >
-          <Container_2/>
+          <Container_2 data={data}/>
         </motion.div>
 
         <Container_3/>
@@ -60,10 +66,17 @@ export default function Home(){
                     duration:0.5, delay:0.25,ease:'linear'
                 }}
         >
-          <Container_5/>
+          <Container_5 data={data}/>
         </motion.div>
         <Container_6/>
         <Footer/>
         </>
     )
+}
+
+ export const productsLoader=async()=>{
+  const res= await fetch("https://shoestrunk-products-data.onrender.com/products");
+  if(!res.ok)
+    throw Error("can't fetch the data ERROR!!");
+  return res.json();
 }
