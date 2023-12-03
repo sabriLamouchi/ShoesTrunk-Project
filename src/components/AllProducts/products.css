@@ -11,6 +11,9 @@
     --soft-blue:#5FFBF1;
 }
 
+div >a{
+    text-decoration: inherit;
+}
 .shoes{
     position: relative;
     display: flex;
@@ -41,7 +44,7 @@
      z-index:100 ;
  }
  
- .shoes .price{
+ .shoes  .price{
      align-self: flex-end;
      justify-self: flex-end;
      position: relative;
@@ -50,7 +53,6 @@
      width: fit-content;
      font-size:3vw;
      margin-top:  -20%;
- 
      color: var(--Orange);
  }
  .shoes h3{

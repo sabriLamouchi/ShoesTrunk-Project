@@ -2,23 +2,36 @@ import './App.css';
 
 //components
 import Header from './components/header/Header'
-import Home, { productsLoader } from './pages/Home';
-import Likes_Page from './pages/LikePage/Likes_Page'
+// import Home, { productsLoader } from './pages/Home';
 import NotFound from './pages/NotFoundPage/NotFound';
-import Help, { ContactAction } from './pages/HelpPage/Help';
-import ProductDetails, { ProductDetailLoader } from './components/AllProducts/ProductDetails';
+import SkeletonHelp from './components/Skeletons/SkeletonHelp';
+// import  Help, { ContactAction } from './pages/HelpPage/Help';
 //BIB:
 import React,{useRef,useEffect, useState} from 'react';
 import RingLoader from "react-spinners/RingLoader";
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, useNavigate } from 'react-router-dom';
 import AddCart from './pages/CartPage/AddCart';
 import { CartProvider } from 'react-use-cart';
+// import ProductDetail, { prodDetail } from './pages/productDetails/ProductDetail';
+import { ErrorBoundary } from 'react-error-boundary';
+// Lazy
+
+import { lazy,Suspense } from 'react';
+import { ContactAction } from './pages/HelpPage/Help';
+import { productsLoader } from './pages/Home';
+import SkeletonHome from './components/Skeletons/SkeletonHome';
+import { prodDetail } from './pages/productDetails/ProductDetail';
+import  { ProductTypeLoader } from './pages/product_page/ProductPage';
+import SkeletonProduct from './components/Skeletons/SkeletonProduct';
 
 
+  const Help=lazy(()=> import('./pages/HelpPage/Help')) 
+  const Home =lazy(()=>import('./pages/Home'))
+  const ProductDetail=lazy(()=>import('./pages/productDetails/ProductDetail'))
+  const ProductPage =lazy(()=>import('./pages/product_page/ProductPage'))
+ function App() {
 
-
-function App() {
+  //navigate
   // loaing page animation:
   const [loading,setloading]=useState(false);
 
@@ -31,19 +44,46 @@ function App() {
   //Router Browser:
   const router=createBrowserRouter(
     createRoutesFromElements(
-      <Route element={<Header/>} >
-      <Route path="/shoesTrunk-Project" element={<Home/>} loader={productsLoader}>
-        {/* <Route
-          path=':id'
-          element={<ProductDetails/>}
-          loader={null}
-          /> */}
-      </Route>
+      <Route element= {<Header/>} >
+        <Route path="/shoesTrunk-Project" element={
+          <Suspense fallback={<SkeletonHome/>}>
+            <Home/>
+          </Suspense>
+        } loader={productsLoader}/>
 
+        <Route
+            path=":id"
+            element={
+              <Suspense fallback={<SkeletonHome/>}>
+                <ProductDetail/>
+              </Suspense>
+          }
+            loader={prodDetail}
+        />
       <Route path='AddCart' element={ <AddCart/> }></Route>
-      <Route path='Likes' element={<Likes_Page/>}></Route>
 
-      <Route path="Help" element={<Help/>} action={ContactAction}></Route>
+      <Route path="Help" element={
+        <ErrorBoundary FallbackComponent={<NotFound/>}
+       >
+          <Suspense fallback={<SkeletonHelp/>}>
+            <Help/>
+          </Suspense>
+          </ErrorBoundary>
+      } action={ContactAction}></Route>
+
+      {/* Product page */}
+      <Route path='products'>
+        <Route
+        path=':type'
+        element={
+          <Suspense fallback={<SkeletonProduct/>}>
+            <ProductPage/>
+          </Suspense>
+        
+      }
+        loader={ProductTypeLoader}
+        />
+      </Route>
 
       {/* Not Found Page 404 Error */}
       <Route path='*' element={<NotFound/>}></Route>

@@ -17,7 +17,7 @@ const AddCart = () => {
         return(
              <div className='item-container  flex-row' key={item.id}>
                 <div className='item flex-row'>
-                    <img src={item.img} alt={item.name}/>
+                    <img src={item.images[0]} alt={item.name}/>
                 </div>
                 <div className='description flex-column'>
                         <h3>{item.name}</h3>

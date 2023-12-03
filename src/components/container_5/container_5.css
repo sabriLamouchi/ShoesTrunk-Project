@@ -27,6 +27,7 @@
     text-align: center;
     width: 50%;
     font-size: 5.5vw;
+    background: transparent;
 }
 .container_5 .products{
     display: grid;
@@ -37,6 +38,8 @@
     overflow: scroll;
     scroll-behavior: smooth;
     scrollbar-width: thin;
+    box-shadow: inset 0rem 0rem 5rem 0rem var(--softgrey);
+    border-radius: 2rem 0 0 2rem;
 }
 .container_5 .products .shoes{
     justify-content: center;

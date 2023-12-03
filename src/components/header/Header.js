@@ -60,15 +60,15 @@ import { CartProvider,useCart } from "react-use-cart";
             <NavLink style={{display:"block"}} to={'/shoesTrunk-Project'}>ShoesTrunk.</NavLink>
             <ul className="list-items active">
                 <li><NavLink to={"/shoesTrunk-Project"}>New&featured</NavLink ></li>
-                <li><NavLink to={"/shoesTrunk-Project"}>Men</NavLink></li>
-                <li><NavLink to={"/shoesTrunk-Project"}>Women</NavLink></li>
-                <li><NavLink to={"/shoesTrunk-Project"}>Kids</NavLink></li>
+                <li><NavLink to={"/products/men_shoes"}>Men</NavLink></li>
+                <li><NavLink to={"/products/women_shoes"}>Women</NavLink></li>
+                <li><NavLink to={"/products/kids_shoes"}>Kids</NavLink></li>
                 <li><NavLink to={"/shoesTrunk-Project"}>Sales</NavLink></li>
                 <li attr='help'><NavLink to={"/Help "}>Help</NavLink></li>
             </ul>
             <ul className="interract-items">
                 <li><img src={search} alt="search"/></li>
-                <li><NavLink style={{display:"block"}} to={"Likes_page"}><img src={heart} alt="Likes"/></NavLink></li>
+                <li><NavLink style={{display:"block"}} to={""}><img src={heart} alt="Likes"/></NavLink></li>
                 <li carte_attr={total? total:""
                          } className="carte_attr"><NavLink style={{display:"block"}} to={"AddCart"} href=""><img src={cart} alt="carte"/></NavLink></li>      
             </ul>
@@ -83,9 +83,6 @@ import { CartProvider,useCart } from "react-use-cart";
                 }else{
                     hamburger.classList.remove("active")
                 }
-
-
-                
             }}
             onBlur={()=>{
                 const hamburger=document.querySelector('div.toggle');
