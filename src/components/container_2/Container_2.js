@@ -33,7 +33,7 @@ export default function container_2(props){
  )
     })
     return(
-        <div className=" cont container">
+        <div className=" cont container" id="container_2">
             <h1>popular Product</h1>
             <div className="products">
                 <Swiper 

@@ -7,7 +7,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { CartProvider,useCart } from "react-use-cart";
 
  export default function Header(props){
-
+    console.log(document.getElementById('container_2'));
     
     // ::::::::::::::::::::::
         // use cart:
@@ -59,7 +59,7 @@ import { CartProvider,useCart } from "react-use-cart";
         <header ref={elementRef}>
             <NavLink style={{display:"block"}} to={'/shoesTrunk-Project'}>ShoesTrunk.</NavLink>
             <ul className="list-items active">
-                <li><NavLink to={"/shoesTrunk-Project"}>New&featured</NavLink ></li>
+                <li><NavLink to={"/shoesTrunk-Project#container_2"}>New&featured</NavLink ></li>
                 <li><NavLink to={"/products/men_shoes"}>Men</NavLink></li>
                 <li><NavLink to={"/products/women_shoes"}>Women</NavLink></li>
                 <li><NavLink to={"/products/kids_shoes"}>Kids</NavLink></li>

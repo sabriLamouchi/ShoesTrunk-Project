@@ -43,34 +43,76 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.prod_container .product img{
-    width: 30rem;
+
+
+.prod_container .product .image img{
+    width: 27vw;
     filter: drop-shadow(0px 11px 10px var(--dark));
-    
+    transition: transform 200ms ease-in-out;
+}
+.prod_container .product .image:hover img{
+    transform: scale(1.3);
 }
 .prod_container .product .image{
     position: relative;
     cursor: pointer;
-}
-
-.prod_container .product .image:hover{
+    width: 100%;
+    background-color: transparent;
+    border-radius: 2rem;
+    overflow: hidden;
     
 }
 
 .prod_container .product .image::after{
     content: "";
     position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-30%,-50%);
+    --v-width:15vw;
+    top:0;
+    left: 0;
     width: 100%;
     height: 100%;
+    aspect-ratio: 1;
     background-color: var(--Orange);
     z-index: -1;
-    clip-path: var(--warmer);
+    clip-path: polygon(
+        50% 0%,
+        100% 0%,
+        100% 100%,
+        20% 100%,
+        0 80%
+
+    );
 }
+
+.prod_container .product .image .view{
+    position: absolute;
+    background-color: var(--dark);
+    bottom: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 50%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.33);
+    box-shadow: 50px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    
+}
+.prod_container .product .image .view.active{
+    bottom: -50%;
+}
+.prod_container .product .image .view a{
+    text-decoration: inherit;
+    font-family: "cairo",sans-serif;
+    font-size: 3vw;
+    color: var(--Orange);
+    font-weight: 700;
+}
+
+
 .prod_container .product .discription{
     align-self: flex-start;
     text-align: left;
@@ -79,6 +121,7 @@
     flex-direction: column;
     background: transparent;
     mix-blend-mode:color;
+    color: var(--dark);
 }
 .prod_container .product .discription h4{
     color: var(--Orange);
@@ -86,6 +129,11 @@
 .prod_container .product .discription h2::first-letter{
     text-transform: uppercase;
     mix-blend-mode: difference;
+}
+.prod_container .product .discription p{
+    font-family: "cairo",sans-serif;
+    font-size: 2.5vw;
+    width: fit-content;
 }
 .prod_container .product  button.add-to-cart{
     width:10vw;
@@ -117,9 +165,29 @@
 }
 
 
-@media (max-width:688px){
+@media screen and (max-width:688px){
     .prod_container .product button.add-to-cart{
         width: 17vw;
         font-size: 2.5vw;
+    }
+    .prod_container .product .image img{
+        width:60vw;
+    }
+
+}
+
+@media screen and (max-width:819px){
+    .prod_container .product .image img{
+        width: 50vw;
+    }
+    .prod_container .product .image .view a{
+        font-size: 5vw;
+    }
+    .prod_container .product button.add-to-cart{
+        width: 20vw;
+        font-size: 3vw;
+    }
+    .prod_container{
+        gap: 3rem;
     }
 }
