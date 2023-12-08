@@ -1,7 +1,6 @@
 import React from "react";
 import Lottie from 'react-lottie';
-import notFoundAnimation from './NotFound Page.json'
-import pageNotFound from './pageNotFound.json'
+import notFoundAnimation from '../../iconsData/NotFound Page.json'
 import '../../App.css'
 import { Link, NavLink } from "react-router-dom";
 export default function NotFound(){

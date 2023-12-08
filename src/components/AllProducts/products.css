@@ -36,7 +36,7 @@ div >a{
      background-color: var(--gray);
      z-index: -1;
  }
- .shoes img{
+ .shoes img.shoes-image{
      max-width:100%;
      align-self: center;
      margin-top: -65%;
@@ -115,6 +115,20 @@ div >a{
  }
 
 
+ .shoes .like{
+    position: absolute;
+    width: 15%;
+    right: 0;
+    z-index: 900;
+    /* filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8); */
+    filter: invert(100%) grayscale(1);
+ }
+ .shoes .like:hover{
+    filter:none;
+ }
+ .shoes .like.active{
+    filter: none;
+ }
 
  @media (max-width:688px){
     .shoes button.add-to-cart{
