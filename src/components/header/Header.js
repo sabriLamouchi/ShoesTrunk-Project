@@ -1,13 +1,14 @@
 import React,{useCallback, useEffect,useRef, useState} from "react";
 import './Header.css'
-import search from '../../iconsData/search.svg'
-import cart from '../../iconsData/cart.svg'
-import heart from '../../iconsData/heart.svg'
-import brokeHeart from '../../iconsData/Heart beat_custom_icon.json'
-import brokenHeart from '../../iconsData/brokenHeart.svg'
+import search from '../../assets/iconsData/search.svg'
+import cart from '../../assets/iconsData/cart.svg'
+import heart from '../../assets/iconsData/heart.svg'
+import brokeHeart from '../../assets/iconsData/Heart beat_custom_icon.json'
+import brokenHeart from '../../assets/iconsData/brokenHeart.svg'
 import { NavLink, Outlet, json } from "react-router-dom";
 import { CartProvider,useCart } from "react-use-cart";
 import Lottie from "react-lottie";
+import { ReactSortable } from "react-sortablejs";
 
  export default function Header(props){
     // lottie icon:
@@ -31,7 +32,7 @@ import Lottie from "react-lottie";
         }=useCart()
         const [total,setTotal]=useState(0);
     useEffect(()=>{
-
+// count on cart 
         const clIn=setInterval(() => {
             const items=JSON.parse(window.localStorage.getItem('react-use-cart'));
             setTotal(items.totalItems);
@@ -39,6 +40,13 @@ import Lottie from "react-lottie";
         return ()=>{
             clearInterval(clIn);
         }
+// drag and drop like section
+        // const dragAndDropItems=document.getElementById(likes-container);
+        // new Sortable(dragAndDropItems,{
+        //     Animation:350,
+        //     chosenClass:'like-prod-chosen',
+        //     dragClass:'like-prod-drag'
+        // })
     },[])
 
 
@@ -47,7 +55,7 @@ import Lottie from "react-lottie";
     const elementRef=useRef();
     useEffect(()=>{
     const handleScroll=()=>{
-        if(window.scrollY!=0){
+        if(window.scrollY!==0){
         //   console.log(elementRef.current.getBoundingClientRect());
         elementRef.current.classList.add("active")
         }
@@ -66,11 +74,16 @@ import Lottie from "react-lottie";
     },[window.scrollY])
 
     // likes_section:
-    const  [likesProd,setLikesProd]=useState({items:[]});
+    const obj={
+        items:[]
+    }
+    const  [likesProd,setLikesProd]=useState(obj);
+    const [list,setList]=useState([]);
     useEffect(()=>{
         const cinprodLike=setInterval(()=>{
             const prod=JSON.parse(window.localStorage.getItem('likes'));
             setLikesProd(prod);
+            setList(likesProd.items);
         },2000)
 
         return ()=> clearInterval(cinprodLike)
@@ -82,8 +95,7 @@ import Lottie from "react-lottie";
     useEffect(()=>{
          LikeSectionRef.current.classList.toggle('active')
         
-    },[!LikeSectionActive])
-
+    },[LikeSectionActive])
 
     return (
         <>
@@ -98,15 +110,18 @@ import Lottie from "react-lottie";
                 <li attr='help'><NavLink to={"/Help "}>Help</NavLink></li>
             </ul>
             <ul className="interract-items">
-                <li><img src={search} alt="search"/></li>
+                <li><NavLink to={'/search'}><img src={search} alt="search"/></NavLink></li>
                 <li like_attr={likesProd.items.length?likesProd.items.length:""} className="heart" onClick={()=>{setLikeSectionActive(!LikeSectionActive)}}><img src={heart} alt="Likes"/></li>
                 <li carte_attr={total? total:""
                          } className="carte_attr"><NavLink style={{display:"block"}} to={"AddCart"} href=""><img src={cart} alt="carte"/></NavLink></li>
                 {/* Likes section  */}
                 <li ref={LikeSectionRef}  className="likes_section">
                     <h2>Products You like</h2>
+                    <div  className="likes_container flex-column">
                          { 
-                                    likesProd.items.map((p)=>{
+                                     likesProd.items &&
+                                     Array.isArray(likesProd.items) &&
+                                     likesProd.items.map((p)=>{
                                         return(
                                                 <div id={p.id} className="like_prod_container">
                                                     <img src={p.images[0]}/>
@@ -116,13 +131,14 @@ import Lottie from "react-lottie";
                                                                     let prods=JSON.parse(localStorage.getItem('likes'));
                                                                     let obj={items:[]}
                                                                     console.log(prods);
-                                                                    obj.items=prods.items.filter((prd)=>prd.id!=p.id);
+                                                                    obj.items=prods.items.filter((prd)=>prd.id!==p.id);
                                                                     localStorage.setItem('likes',JSON.stringify(obj));
                                                     }}><img src={brokenHeart}/></button>
                                                 </div>
                                         );
                                     })
                          }
+                    </div>
                 </li>
                       
             </ul>

@@ -23,7 +23,7 @@ import SkeletonHome from './components/Skeletons/SkeletonHome';
 import { prodDetail } from './pages/productDetails/ProductDetail';
 import  { ProductTypeLoader } from './pages/product_page/ProductPage';
 import SkeletonProduct from './components/Skeletons/SkeletonProduct';
-
+import Search from './pages/searchPage/Search';
 
   const Help=lazy(()=> import('./pages/HelpPage/Help')) 
   const Home =lazy(()=>import('./pages/Home'))
@@ -33,14 +33,17 @@ import SkeletonProduct from './components/Skeletons/SkeletonProduct';
 
   //navigate
   // loaing page animation:
-  const [loading,setloading]=useState(false);
+  const [loading,setloading]=useState(true);
+
+  // App refrences:
+  const appRef=useRef();
 
   useEffect(()=>{
-    setloading(true)
     setTimeout(()=>{
       setloading(false)
-    },4000);
-  },[])
+    },4000)
+  },[loading])
+
   //Router Browser:
   const router=createBrowserRouter(
     createRoutesFromElements(
@@ -85,6 +88,9 @@ import SkeletonProduct from './components/Skeletons/SkeletonProduct';
         />
       </Route>
 
+      {/* search Route Element */}
+      <Route path='search' element={<Search/>} loader={productsLoader} />
+
       {/* Not Found Page 404 Error */}
       <Route path='*' element={<NotFound/>}></Route>
       </Route>
@@ -93,26 +99,30 @@ import SkeletonProduct from './components/Skeletons/SkeletonProduct';
   
 
   return (
-    <div className="App">
-       {/* {
-        loading ?
-        <RingLoader
-        color={"rgb(244, 111, 15)"}
-        loading={loading}
-        size={100}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
-         :
-        //router Provider :
-        <CartProvider>
-        <RouterProvider router={router}/>
-        </CartProvider>
-       } */}
-        <CartProvider>
-        <RouterProvider router={router}/>
-        </CartProvider>
-    </div>
+    <>
+        {
+          loading ?
+          <RingLoader
+          color={"rgb(244, 111, 15)"}
+          loading={loading}
+          size={100}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+          :
+          //router Provider :
+          <div ref={appRef} className="App">
+            <CartProvider>
+              <RouterProvider router={router}/>
+            </CartProvider>
+          </div>
+        }
+          {/* <CartProvider>
+          <RouterProvider router={router}/>
+          </CartProvider> */}
+      
+    </>
+
   );
 }
 

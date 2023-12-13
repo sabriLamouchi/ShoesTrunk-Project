@@ -1,0 +1,115 @@
+
+:root{
+    --Orange: rgb(244, 111, 15);
+    --violet: rgb(94, 79, 230);
+    
+    --gray: rgb(246, 246, 246);
+    
+    --yallow: rgb(255, 198, 60);
+    --black:black;
+    --dark:#27374D;
+    --soft-blue:#5FFBF1;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'cairo',sans-serif;
+}
+.search_page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.search_page_container .search_bar{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+.search_page_container .search_bar video{
+    width: 100%;
+    background-position:cover;
+}
+.search_page_container .search_bar::before{
+    position:absolute;
+    content: '';
+    width: 100%;
+    height: 99%;
+    top:0;
+    left: 0;
+    background-color: rgb(0, 0, 0,0.5);
+}
+
+.search_page_container .search_bar .search_bar_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+
+}
+.search_page_container .search_bar .search_bar_content p{
+    width: 100%;
+    font-size: 10vw;
+    font-weight: 800;
+    color: var(--gray);
+}
+.search_page_container .search_bar .search_bar_content .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.search_page_container .search_bar .search_bar_content .search input{
+    width: 40vw;
+    height: 5vh;
+    border-radius: 1rem 0 0 1rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: var(--gray);
+}
+.search_page_container .search_bar .search_bar_content .search button {
+    background: var(--gray);
+    outline: none;
+    border-radius: 0 1rem 1rem 0 ;
+    border: none;
+    cursor: pointer;
+}
+.search_page_container .search_bar .search_bar_content .search button img{
+    width: 2.4rem;
+}
+
+.search_result h1{
+    font-size: 4vw;
+    color: var(--dark);
+}
+
+.search_result .result_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30vw,1fr));
+    gap: 5rem .5rem;
+    width: 90vw;
+    margin-top: 5vw;
+}
+.search_result .result_container .shoes{
+    width:80%;
+    margin:  0 auto;
+}
+.search_result .result_container .shoes::before{
+    border-radius: 2rem;
+}
+
+@media screen and (max-width:688px) {
+    .search_result .result_container {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .search_result .result_container .shoes h3{
+        font-size: 5vw;
+    }
+    .search_result .result_container .shoes .price{
+        font-size: 5vw;
+    }
+}

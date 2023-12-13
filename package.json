@@ -16,9 +16,11 @@
     "react-lottie": "^1.2.3",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "react-sortablejs": "^6.1.4",
     "react-spinner": "^0.2.7",
     "react-spinners": "^0.13.8",
     "react-use-cart": "^1.13.0",
+    "sortablejs": "^1.15.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

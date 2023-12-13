@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import'./products.css'
 import Lottie from "react-lottie";
-import LoveHeart from '../../iconsData/heart.svg'
+import LoveHeart from '../../assets/iconsData/heart.svg'
 
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
@@ -31,8 +31,8 @@ export default function Product(props){
              obj.items=LikeProd.items.filter((el)=>el.id!=props.item.id);
             obj.items.push(props.item);
             localStorage.setItem('likes',JSON.stringify(obj));
-            likeRef.current.classList.toggle('active')
-
+            likeRef.current.classList.toggle('active') 
+            
         });
         
         if(likeRef.current)

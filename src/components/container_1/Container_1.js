@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import './container_1.css'
-import  Express from'./Express.svg'
-import Through from './Through.svg'
-import shoes from './shoes.svg'
+import  Express from'../../assets/images/Express.svg'
+import Through from '../../assets/images/Through.svg'
+import shoes from '../../assets/images/shoes.svg'
 
 import {motion} from "framer-motion"
 export default function Container_1(){

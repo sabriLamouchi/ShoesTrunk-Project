@@ -1,5 +1,5 @@
 import React from "react";
-import shoesTrunkPer1 from './shoestrunkPer1.png'
+import shoesTrunkPer1 from '../../assets/images/shoestrunkPer1.png'
 import './container_4.css'
 export default function Container_4(){
 

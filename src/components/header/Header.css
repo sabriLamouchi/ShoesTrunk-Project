@@ -14,6 +14,7 @@
 *{
     box-sizing: border-box;
     transition: all 700ms ease-in-out;
+
 }
 
 
@@ -151,6 +152,11 @@ header .interract-items li.carte_attr::before{
     justify-content: center;
     align-items: center;
 }
+header .interract-items li .likes_container{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    gap: 1rem;
+}
 
 header .interract-items li.likes_section{
     position: absolute;
@@ -168,8 +174,6 @@ header .interract-items li.likes_section{
     padding: 0.6rem;
     --radius:1.5rem;
     border-radius: var(--radius) 0 0 var(--radius);
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
     overflow-Y: scroll;
     transition: width 300ms ease-in-out;
     /* From glass-effect */
@@ -426,7 +430,7 @@ header.active{
         margin-left: -10%;
     }
     header .interract-items li.likes_section{
-        left: -20%;
+        left: -45%;
         width: 80vw;
     }
     header .interract-items li.likes_section .like_prod_container{

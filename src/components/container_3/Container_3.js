@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import './container_3.css'
-import cameraMenSplash from './cameraMenSplash.svg'
+import cameraMenSplash from '../../assets/images/cameraMenSplash.svg'
 import {motion, useAnimation, useInView} from "framer-motion"
 export default function Container_3(){
     const ref=useRef(null)

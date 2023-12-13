@@ -1,7 +1,7 @@
 import React from 'react';
 import { CartProvider, useCart } from 'react-use-cart';
 import './addcart.css'
-import cart_cross from './cart-cross.svg';
+import cart_cross from '../../assets/iconsData/cart-cross.svg';
 const AddCart = () => {
     const {
         isEmpty,

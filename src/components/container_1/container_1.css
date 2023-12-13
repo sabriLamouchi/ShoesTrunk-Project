@@ -47,7 +47,7 @@
 
 .container .exclusive{
     width: 100%;
-    background-image: url('./back_shoes.svg');
+    background-image: url('../../assets/images/back_shoes.svg');
     background-size:contain;
     background-repeat: no-repeat;
     height: auto;
