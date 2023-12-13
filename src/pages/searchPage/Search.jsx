@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './search.css'
 import video from '../../assets/videos/search_bar_video.mp4'
-import search from '../../iconsData/search.svg'
+import search from '../../assets/iconsData/search.svg'
 import { useLoaderData } from 'react-router-dom';
 import Product from '../../components/AllProducts/Product';
 const Search = () => {
