@@ -7,9 +7,10 @@ import Product from '../../components/AllProducts/Product';
 const Search = () => {
     const data=useLoaderData()
     var [datasearch,setDatasearch]=useState(null);
-    let searchBar=document.getElementById("searchBar");
+    
 
     const hundleSearch=()=>{
+        const searchBar=document.getElementById("searchBar");
         console.log(searchBar.value)
         if(searchBar.value)
             setDatasearch(data.filter((prod)=> prod.name.includes(searchBar.value)))
