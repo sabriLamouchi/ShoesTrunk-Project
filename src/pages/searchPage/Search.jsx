@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './search.css'
 import video from '../../assets/videos/search_bar_video.mp4'
 import search from '../../assets/iconsData/search.svg'
@@ -7,15 +7,21 @@ import Product from '../../components/AllProducts/Product';
 const Search = () => {
     const data=useLoaderData()
     var [datasearch,setDatasearch]=useState(null);
-    
+    const [activeSearch,setActiveSearch]=useState(false);
 
-    const hundleSearch=()=>{
+    // const hundleSearch=()=>{
+    //     const searchBar=document.getElementById("searchBar");
+    //     console.log(searchBar.value)
+    //     if(searchBar.value)
+    //         setDatasearch(data.filter((prod)=> prod.name.includes(searchBar.value)))
+    // }
+    
+    useEffect(()=>{
         const searchBar=document.getElementById("searchBar");
-        console.log(searchBar.value)
         if(searchBar.value)
-            setDatasearch(data.filter((prod)=> prod.name.includes(searchBar.value)))
-        console.log(datasearch);
-    }
+        setDatasearch(data.filter((prod)=> prod.name.includes(searchBar.value)))
+
+    },[activeSearch])
 
     return (
         <div className='search_page_container'>
@@ -26,7 +32,9 @@ const Search = () => {
                     <p>Through Style</p>
                     <div className='search'>
                         <input  type='text' id='searchBar' name='searchBar'/>
-                        <button onClick={hundleSearch}><img src={search}/></button>
+                        <button onClick={
+                            ()=>setActiveSearch(!activeSearch)
+                            }><img src={search}/></button>
                     </div>
                 </div>
             </div>
@@ -36,7 +44,8 @@ const Search = () => {
                     {
                         datasearch&&
                         datasearch.map((prod)=>
-                            <Product 
+                            <Product
+                            Key={prod.id} 
                             img={prod.images[0]}
                             name={prod.name}
                             price={prod.price}

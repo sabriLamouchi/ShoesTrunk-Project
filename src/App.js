@@ -101,7 +101,7 @@ import Search from './pages/searchPage/Search';
   return (
     <>
         {
-          loading ?
+          !appRef ?
           <RingLoader
           color={"rgb(244, 111, 15)"}
           loading={loading}

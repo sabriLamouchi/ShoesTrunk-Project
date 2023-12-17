@@ -205,8 +205,15 @@ header .interract-items li.likes_section .like_prod_container{
     color: var(--dark);
     
 }
-header .interract-items li.likes_section .like_prod_container img{
-    width: 20%;
+header .interract-items li.likes_section .like_prod_container  a {
+    width: 50%;
+    border-radius: 1rem;
+}
+header .interract-items li.likes_section .like_prod_container  a img{
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 header .interract-items li.likes_section .like_prod_container p{
     width: fit-content;
@@ -430,11 +437,14 @@ header.active{
         margin-left: -10%;
     }
     header .interract-items li.likes_section{
-        left: -45%;
+       left: -17vw;
         width: 80vw;
     }
     header .interract-items li.likes_section .like_prod_container{
         width:100%;
+    }
+    header .interract-items li.likes_section .like_prod_container a{
+        width: 25%;
     }
     header .interract-items li.likes_section .like_prod_container p{
         font-size: 2.5vw;

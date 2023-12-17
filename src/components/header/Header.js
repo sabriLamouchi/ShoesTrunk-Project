@@ -5,7 +5,7 @@ import cart from '../../assets/iconsData/cart.svg'
 import heart from '../../assets/iconsData/heart.svg'
 import brokeHeart from '../../assets/iconsData/Heart beat_custom_icon.json'
 import brokenHeart from '../../assets/iconsData/brokenHeart.svg'
-import { NavLink, Outlet, json } from "react-router-dom";
+import { Link, NavLink, Outlet, json } from "react-router-dom";
 import { CartProvider,useCart } from "react-use-cart";
 import Lottie from "react-lottie";
 import { ReactSortable } from "react-sortablejs";
@@ -123,14 +123,15 @@ import { ReactSortable } from "react-sortablejs";
                                      Array.isArray(likesProd.items) &&
                                      likesProd.items.map((p)=>{
                                         return(
-                                                <div id={p.id} className="like_prod_container">
-                                                    <img src={p.images[0]}/>
+                                                <div id={p.id} className="like_prod_container" key={p.id}>
+                                                    <Link to={`/${p.id.toString()}`}>
+                                                        <img src={p.images[0]}/>
+                                                    </Link>
                                                     <p>{p.name}</p>
                                                     <p>{p.price}$</p>
                                                     <button onClick={()=>{
                                                                     let prods=JSON.parse(localStorage.getItem('likes'));
                                                                     let obj={items:[]}
-                                                                    console.log(prods);
                                                                     obj.items=prods.items.filter((prd)=>prd.id!==p.id);
                                                                     localStorage.setItem('likes',JSON.stringify(obj));
                                                     }}><img src={brokenHeart}/></button>
@@ -158,7 +159,6 @@ import { ReactSortable } from "react-sortablejs";
             onBlur={()=>{
                 const hamburger=document.querySelector('div.toggle');
                     hamburger.addEventListener('blur',(e)=>{
-                    console.log(hamburger)
                     hamburger.classList.remove("active");
                     document.querySelector('.list-items').classList.remove("active");
                     

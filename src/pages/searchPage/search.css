@@ -101,6 +101,12 @@
 .search_result .result_container .shoes::before{
     border-radius: 2rem;
 }
+.search_result .result_container button{
+    width: 15vw;
+    position: relative;
+    bottom: 10%;
+    margin-top: 0%;
+}
 
 @media screen and (max-width:688px) {
     .search_result .result_container {
